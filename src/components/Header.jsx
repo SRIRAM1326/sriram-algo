@@ -11,8 +11,8 @@ const Header = () => {
     >
       <div className="px-6 py-4 md:py-6 flex justify-between items-center bg-vintage-burgundy shadow-md border-b border-vintage-gold/20">
         <div className="flex items-center gap-4 text-xl font-serif font-bold text-vintage-gold tracking-widest uppercase">
-          <img src={crestLogo} alt="Old Money Crest" className="h-12 w-12 md:h-14 md:w-14 object-cover rounded-full border-2 border-vintage-gold/50 shadow-[0_0_10px_rgba(197,160,89,0.2)]" />
-          <a href="#">Sriram M</a>
+          <img src={crestLogo} alt="Crest Logo" className="h-12 w-auto md:h-14 max-w-[56px] object-contain drop-shadow-[0_2px_8px_rgba(197,160,89,0.3)]" />
+          <a href="#" className="tracking-widest">S R I R A M &nbsp; M</a>
         </div>
         <nav className="hidden md:flex gap-8 text-sm uppercase tracking-widest text-vintage-gold/90">
           <a href="#about" className="hover:text-white transition-colors duration-300">About</a>

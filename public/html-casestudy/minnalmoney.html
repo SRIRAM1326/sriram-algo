@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MinnalMoney — Professional Real-Time Trading Terminal | Case Study</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230A1628'/%3E%3Ctext x='50' y='70' font-size='46' text-anchor='middle' fill='%23C9A227' font-family='monospace'%3E%26lt;/%26gt;%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ PAGE 1 — COVER ============ -->
+<div class="page cover" id="page-1">
+  <div class="cover-grid"></div>
+  <div class="page-inner">
+    <div class="cover-top">
+      <div class="brandmark">
+        <div class="mark">&lt;/&gt;</div>
+        <div class="brand-text">
+          <div class="name">MinnalMoney Trading Terminal</div>
+          <div class="sub">Flattrade-Integrated Options Ecosystem</div>
+        </div>
+      </div>
+      <div class="doc-meta">
+        DOCUMENT&nbsp; <b>01 / 06</b><br>
+        FINTECH / ALGORITHMIC TRADING<br>
+        2026 EDITION
+      </div>
+    </div>
+
+    <div class="cover-mid">
+      <div class="eyebrow on-dark">High-Performance FinTech Engineering Case Study</div>
+      <h1>MinnalMoney <span>Trading Terminal</span></h1>
+      <div class="tagline">FLATTRADE-INTEGRATED OPTIONS TRADING &amp; MARKET MONITORING PLATFORM</div>
+
+      <!-- Hero Visual Banner Image minnalmoney.png -->
+      <div class="cover-hero-frame">
+        <img src="images/minnalmoney.png" alt="MinnalMoney Real-Time Trading Terminal Visual Banner" class="cover-banner-img">
+      </div>
+
+      <p class="cover-sub">Centralized, web-based professional trading application designed for monitoring real-time market data, analyzing options contracts, executing low-latency trades, and managing portfolio risk across NIFTY, BANKNIFTY, and SENSEX derivatives.</p>
+      <div class="prepared-for">Built with: <b>Python, Flask, JavaScript, HTML5/CSS3, WebSocket, SSE, REST APIs</b> &nbsp;|&nbsp; Broker: <b>Flattrade / Noren API</b></div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-eyebrow">Key System Performance &amp; Architectural Metrics</div>
+      <div class="stat"><div class="num">&lt;100<span>ms</span></div><div class="lbl">WebSocket Tick &amp; SSE Broadcast Event Latency</div></div>
+      <div class="stat"><div class="num">Dual<span>Mode</span></div><div class="lbl">LIVE Broker API &amp; Simulated PAPER Trading Engine</div></div>
+      <div class="stat"><div class="num">3<span>Indices</span></div><div class="lbl">Automated Strike Selection for NIFTY, BANKNIFTY &amp; SENSEX</div></div>
+      <div class="stat"><div class="num">Global<span>Exit</span></div><div class="lbl">Automated P&amp;L Target &amp; Stop-Loss Square-Off</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 2 — OVERVIEW & ARCHITECTURE SOLUTION ============ -->
+<div class="page" id="page-2">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Architecture Solution</div>
+        <div class="htitle">Project Overview &amp; System Architecture</div>
+        <div class="hsub">A single-screen professional trading dashboard replacing fragmented trading workflows with real-time market feeds, options analysis, and automated risk controls.</div>
+      </div>
+    </div>
+
+    <div class="sec-h">Business Problem &amp; Core Challenge</div>
+    <div class="card">
+      <h3>⚠️ Traditional Retail Trading Bottlenecks</h3>
+      <p>Traditional options trading forces traders to navigate multiple screens to monitor index LTP, locate option strikes, check expiry dates, track Call/Put prices, place orders, monitor positions, calculate P&amp;L, and manage stop-losses. Fast-moving market pullbacks amplify manual errors and delay execution.</p>
+    </div>
+
+    <div class="sec-h">High-Level Solution Architecture</div>
+    <div class="diagram-display-box">
+      <div class="diag-header">
+        <span class="diag-title">SYSTEM ARCHITECTURE DIAGRAM 1 — DECOUPLED COMPONENT LAYERS</span>
+      </div>
+      <div class="node-flow-canvas">
+        <div class="flow-pill pill-main">Trading UI (HTML + CSS + Vanilla JavaScript)</div>
+        <div class="flow-arrow-dn">↓ SSE / HTTP Requests</div>
+        <div class="flow-pill pill-box">Flask Backend (minnalapp.py Routes + Business Logic)</div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-split">
+          <div class="flow-pill pill-sub">Flattrade Service (REST + WebSocket API)</div>
+          <div class="flow-pill pill-sub">Paper Trading Service (Simulated Engine)</div>
+        </div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-pill pill-main">Flattrade API / Noren API Infrastructure</div>
+      </div>
+      <details class="diag-details">
+        <summary>View Preserved Raw ASCII Architecture Diagram</summary>
+        <pre><code class="ascii-code">                    ┌─────────────────────────┐
+                    │      Trading UI         │
+                    │ HTML + CSS + JavaScript │
+                    └────────────┬────────────┘
+                                 │
+                         SSE / HTTP Requests
+                                 │
+                    ┌────────────▼────────────┐
+                    │      Flask Backend      │
+                    │ Routes + Business Logic │
+                    └────────────┬────────────┘
+                                 │
+              ┌──────────────────┴──────────────────┐
+              │                                     │
+      ┌───────▼────────┐                  ┌─────────▼────────┐
+      │ Flattrade      │                  │ Paper Trading    │
+      │ Service        │                  │ Service          │
+      └───────┬────────┘                  └─────────┬────────┘
+              │                                     │
+       REST + WebSocket                       Simulated Data
+              │
+      ┌───────▼────────┐
+      │ Flattrade API  │
+      │ / Noren API    │
+      └────────────────┘</code></pre>
+      </details>
+    </div>
+
+    <div class="sec-h">Core Subsystem Breakdown</div>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag gold">Frontend Layer</span>
+        <h3>Responsive Dark Terminal UI</h3>
+        <p>HTML5, CSS3, &amp; Vanilla JS with Flexbox/Grid layout. Features market price panels, Call/Put option cards, expiry/strike selectors, and tabbed portfolio feeds.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">Backend Services</span>
+        <h3>Flask Backend (minnalapp.py)</h3>
+        <p>Modular Flask routes (`routes/auth.py`, `routes/dashboard.py`) and underlying services (`flattrade_service.py`, `websocket_manager.py`, `paper_trading_service.py`).</p>
+      </div>
+    </div>
+
+    <div class="p-footer"><span>MINNALMONEY — PROFESSIONAL REAL-TIME TRADING TERMINAL</span><span class="pg">PAGE 02 / 06</span></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 3 — REAL-TIME DATA PIPELINE ============ -->
+<div class="page" id="page-3">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Broker &amp; Data Pipeline</div>
+        <div class="htitle">Flattrade Integration &amp; SSE Streaming</div>
+        <div class="hsub">Combining Flattrade REST APIs for account/order management with persistent WebSocket streams and Server-Sent Events (SSE) for low-latency market updates.</div>
+      </div>
+    </div>
+
+    <!-- Embedded Terminal Interface Image minnalmoney1.png -->
+    <div class="doc-img-frame">
+      <img src="images/minnalmoney1.png" alt="MinnalMoney Live Market Stream & Flattrade SSE Pipeline Interface">
+      <div class="doc-img-caption">
+        <span>FIGURE 2.1: LIVE MARKET MONITORING &amp; REAL-TIME SSE DATA PIPELINE INTERFACE</span>
+        <span>MINNAL-STREAM-01</span>
+      </div>
+    </div>
+
+    <div class="sec-h">Real-Time Market Data Stream Flow</div>
+    <div class="diagram-display-box">
+      <div class="diag-header">
+        <span class="diag-title">DATA PIPELINE DIAGRAM 2 — WEBSOCKET TO BROWSER SSE BROADCAST</span>
+      </div>
+      <div class="node-flow-canvas">
+        <div class="flow-pill pill-main">Flattrade WebSocket Feed</div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-pill pill-box">WebSocket Manager (Tick Processing Queue)</div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-pill pill-box">SSE Broadcast Worker (/stream Endpoint)</div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-pill pill-main">Connected Browser Clients (EventSource UI Handlers)</div>
+      </div>
+      <details class="diag-details">
+        <summary>View Preserved Raw ASCII Stream Diagram</summary>
+        <pre><code class="ascii-code">Flattrade WebSocket → WebSocket Manager → Market Tick Processing → Message Queue → SSE Broadcast Worker → Connected Browser Clients → Live Dashboard Updates</code></pre>
+      </details>
+    </div>
+
+    <div class="sec-h">Flattrade REST API vs WebSocket Responsibilities</div>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag gold">REST API Layer</span>
+        <h3>REST API Operations</h3>
+        <p>• Authentication &amp; TOTP login.<br>
+        • Fetching expiry dates &amp; searching instruments.<br>
+        • Retrieving positions, orders, trades, holdings, &amp; limits.<br>
+        • Submitting new orders, cancelling, &amp; closing positions.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">WebSocket &amp; SSE Layer</span>
+        <h3>WebSocket &amp; SSE Real-Time Feeds</h3>
+        <p>• <b>WebSocket:</b> Real-time market ticks &amp; order status events.<br>
+        • <b>SSE (/stream):</b> EventSource feeds routing `market_update`, `account_update`, and `order_update` to browser UI.</p>
+      </div>
+    </div>
+
+    <div class="dark-strip">
+      <div style="flex:1;">
+        <h4>Decoupled Queue Architecture</h4>
+        <p>Decouples high-frequency broker WebSocket callbacks from browser rendering via a thread-safe message queue worker, preventing UI freezes during fast market surges.</p>
+      </div>
+      <div class="chip-col">
+        <span>WebSocket Manager</span>
+        <span>SSE Queue Worker</span>
+        <span>Zero Refresh UI</span>
+      </div>
+    </div>
+
+    <div class="p-footer"><span>MINNALMONEY — PROFESSIONAL REAL-TIME TRADING TERMINAL</span><span class="pg">PAGE 03 / 06</span></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 4 — OPTIONS WORKFLOW & DUAL MODES ============ -->
+<div class="page" id="page-4">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Trading Engine</div>
+        <div class="htitle">Options Workflow &amp; Dual-Mode Architecture</div>
+        <div class="hsub">Streamlined Call/Put order execution coupled with a dual LIVE and PAPER simulation engine for risk-free strategy testing.</div>
+      </div>
+    </div>
+
+    <div class="sec-h">Options Execution Workflow &amp; Controls</div>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag gold">Automated Selection</span>
+        <h3>Automated Strike Engine</h3>
+        <p>1. Select Index (NIFTY / BANKNIFTY / SENSEX).<br>
+        2. Retrieve Expiries &amp; calculate ATM Strike from live LTP.<br>
+        3. Stream real-time Call (CE) &amp; Put (PE) option quotes.<br>
+        4. Select Quantity &amp; trigger 1-click execution.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">1-Click Execution</span>
+        <h3>Call &amp; Put Trading Controls</h3>
+        <p>Dedicated dashboard triggers for: <b>Buy Call</b>, <b>Sell Call</b>, <b>Buy Put</b>, and <b>Sell Put</b>. Automatically formats symbol, expiry, strike, option type, lot size, and order type for Flattrade submission.</p>
+      </div>
+    </div>
+
+    <div class="sec-h">Dual-Mode Architecture: LIVE vs PAPER</div>
+    <div class="diagram-display-box">
+      <div class="diag-header">
+        <span class="diag-title">DUAL-MODE TRADING ENVIRONMENT ARCHITECTURE</span>
+      </div>
+      <div class="node-flow-canvas">
+        <div class="flow-pill pill-main">Trading Dashboard UI</div>
+        <div class="flow-arrow-dn">↓ Mode Selector Toggle (LIVE / PAPER)</div>
+        <div class="flow-split">
+          <div class="flow-pill pill-box">LIVE Mode → Flattrade Service → Broker REST/WebSocket API</div>
+          <div class="flow-pill pill-box">PAPER Mode → Paper Trading Service → Simulated Engine</div>
+        </div>
+      </div>
+      <details class="diag-details">
+        <summary>View Preserved Raw ASCII Dual-Mode Diagram</summary>
+        <pre><code class="ascii-code">                 Trading Dashboard
+                        │
+                ┌───────┴───────┐
+                │               │
+              LIVE            PAPER
+                │               │
+        Flattrade Service   Paper Service
+                │               │
+        Real Broker API     Simulation Engine</code></pre>
+      </details>
+    </div>
+
+    <div class="sec-h">Position &amp; Portfolio Monitoring Panels</div>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag navy">Real-Time P&amp;L</span>
+        <h3>Positions &amp; Orders</h3>
+        <p>Displays live MTM P&amp;L, open positions, executed orders, and order status updates.</p>
+      </div>
+      <div class="card">
+        <span class="tag gold">Account Limits</span>
+        <h3>Holdings &amp; Funds</h3>
+        <p>Tracks equity holdings, collateral margins, cash balance, and available margin limits.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">Background Cache</span>
+        <h3>Data Sync Worker</h3>
+        <p>Background sync worker polls broker REST endpoints to keep account state synchronized.</p>
+      </div>
+    </div>
+
+    <div class="p-footer"><span>MINNALMONEY — PROFESSIONAL REAL-TIME TRADING TERMINAL</span><span class="pg">PAGE 04 / 06</span></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 5 — RISK MANAGEMENT & TECHNICAL CHALLENGES ============ -->
+<div class="page" id="page-5">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Risk &amp; Security</div>
+        <div class="htitle">Risk Management &amp; Technical Challenges</div>
+        <div class="hsub">Automated monetary target and stop-loss controls, global emergency position square-off, and solutions to core engineering challenges.</div>
+      </div>
+    </div>
+
+    <!-- Embedded Terminal Dashboard Image minnalmoney 2.png -->
+    <div class="doc-img-frame">
+      <img src="images/minnalmoney 2.png" alt="MinnalMoney Professional Options Trading Terminal Dashboard & Risk System">
+      <div class="doc-img-caption">
+        <span>FIGURE 3.1: PROFESSIONAL OPTIONS TRADING DASHBOARD &amp; GLOBAL EXIT RISK SYSTEM</span>
+        <span>MINNAL-DASH-02</span>
+      </div>
+    </div>
+
+    <div class="sec-h">Automated Risk Management &amp; Global Exit System</div>
+    <div class="card">
+      <h3>🛡️ Global Exit System Workflow</h3>
+      <p>Configurable monetary Target and Stop-Loss thresholds per environment (LIVE vs PAPER). When portfolio P&amp;L crosses limits, the system triggers automated global square-off:</p>
+      <div class="diagram-display-box" style="margin-top:2mm;">
+        <div class="node-flow-canvas">
+          <div class="flow-pill pill-main">Live/Paper P&amp;L Evaluation</div>
+          <div class="flow-arrow-dn">↓</div>
+          <div class="flow-pill pill-box">Target / Stop-Loss Threshold Triggered</div>
+          <div class="flow-arrow-dn">↓</div>
+          <div class="flow-pill pill-box">Global Exit Triggered → Close All Positions &amp; Cancel Orders</div>
+          <div class="flow-arrow-dn">↓</div>
+          <div class="flow-pill pill-sub">Broadcast Emergency Exit Event to Dashboard</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-h">Key Technical Challenges &amp; Engineering Solutions</div>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag gold">Challenge 1 &amp; 2</span>
+        <h3>Real-Time Delivery &amp; Stream Split</h3>
+        <p>• <b>Real-Time Delivery:</b> WebSocket + SSE queue pipeline eliminates page refreshes.<br>
+        • <b>Stream Separation:</b> WebSocket handles high-freq ticks; background polling handles account feeds to optimize bandwidth.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">Challenge 3 &amp; 4</span>
+        <h3>Multi-Client Queues &amp; Dual Engine</h3>
+        <p>• <b>Multi-Client Queue:</b> Dedicated per-session SSE queues distribute ticks cleanly.<br>
+        • <b>Dual Trading Engine:</b> `PaperTradingService` replicates live workflows without mixing simulated and broker orders.</p>
+      </div>
+    </div>
+
+    <div class="p-footer"><span>MINNALMONEY — PROFESSIONAL REAL-TIME TRADING TERMINAL</span><span class="pg">PAGE 05 / 06</span></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 6 — SPECIFICATIONS, STRUCTURE & OUTCOMES ============ -->
+<div class="page" id="page-6">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Engineering Specifications</div>
+        <div class="htitle">Tech Stack, Directory Tree &amp; Outcomes</div>
+        <div class="hsub">Full technology stack specifications, project directory structure, end-to-end user workflow, and key engineering takeaways.</div>
+      </div>
+    </div>
+
+    <div class="sec-h">Technology Stack Specifications</div>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag navy">Backend Core</span>
+        <h3>Python &amp; Flask</h3>
+        <p>Python 3.12, Flask, Flask-Login, TOTP Auth, Threading, Requirements.txt.</p>
+      </div>
+      <div class="card">
+        <span class="tag gold">Broker APIs</span>
+        <h3>Flattrade &amp; Noren API</h3>
+        <p>Flattrade REST API, Noren REST/WebSocket API, Paper Trading Engine.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">Frontend Stream</span>
+        <h3>JavaScript &amp; SSE</h3>
+        <p>HTML5, CSS3 Dark Terminal UI, Vanilla JS, EventSource SSE (/stream).</p>
+      </div>
+    </div>
+
+    <div class="sec-h">Project Directory Structure Tree</div>
+    <div class="diagram-display-box">
+      <div class="diag-header">
+        <span class="diag-title">MINNALMONEY REPOSITORY STRUCTURE TREE</span>
+      </div>
+      <pre><code class="ascii-code">Trading Terminal/
+├── minnalapp.py
+├── routes/ (auth.py, dashboard.py)
+├── services/ (flattrade_service.py, websocket_manager.py, paper_trading_service.py, background_tasks.py, NorenRestApiPy/)
+├── templates/ (login.html, broker_auth.html, dashboard.html)
+└── static/ (css/style.css, js/main.js)</code></pre>
+    </div>
+
+    <div class="sec-h">End-to-End User Flow &amp; Outcomes</div>
+    <div class="card" style="margin-bottom:2mm;">
+      <p><b>User Workflow Sequence:</b> Login → Flattrade TOTP Auth → Session Established → Start Market Stream → WebSocket Ticks → Select Index &amp; Expiry → Identify Strike → Monitor CE/PE → Execute Trade → Order Update → Position Created → Monitor P&amp;L → Risk Evaluation → Global Exit / Manual Square-Off.</p>
+    </div>
+
+    <div class="contribution-box">
+      <h4>Engineering Outcomes &amp; Key Learnings</h4>
+      <p>Successfully delivered a unified web-based trading terminal integrating <b>Python + Flask + JS + REST + WebSocket + SSE + Flattrade + Paper Trading</b>. Demonstrates practical expertise in real-time streaming, FinTech broker API integration, multi-threaded event processing, and automated risk controls.</p>
+    </div>
+
+    <div class="p-footer" style="margin-top:auto;"><span>MINNALMONEY — PROFESSIONAL REAL-TIME TRADING TERMINAL</span><span class="pg">PAGE 06 / 06</span></div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -70,10 +70,7 @@ const Contact = () => {
               <div className="p-5 rounded-full border border-vintage-gold/20 text-vintage-gold/50">
                 <MapPinIcon />
               </div>
-              <div className="flex flex-col items-center gap-1.5">
-                <span className="tracking-wider font-montserrat text-sm">Chennai, India</span>
-                <span className="text-[9px] md:text-[10px] font-sans tracking-[0.25em] text-vintage-gold/60">13°04'57.7"N 80°16'14.6"E</span>
-              </div>
+              <span className="tracking-wider font-montserrat text-sm">Chennai, India</span>
             </div>
           </div>
         </motion.div>

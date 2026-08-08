@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thedal — Universal Website-Aware RAG Chatbot with Voice | Case Study</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230A1628'/%3E%3Ctext x='50' y='70' font-size='46' text-anchor='middle' fill='%23C9A227' font-family='monospace'%3E%26lt;/%26gt;%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ PAGE 1 — COVER ============ -->
+<div class="page cover" id="page-1">
+  <div class="cover-grid"></div>
+  <div class="page-inner">
+    <div class="cover-top">
+      <div class="brandmark">
+        <div class="mark">&lt;/&gt;</div>
+        <div class="brand-text">
+          <div class="name">Thedal AI RAG Platform</div>
+          <div class="sub">Universal Website-Aware Conversational AI</div>
+        </div>
+      </div>
+      <div class="doc-meta">
+        DOCUMENT&nbsp; <b>01 / 06</b><br>
+        RETRIEVAL-AUGMENTED GENERATION<br>
+        2026 EDITION
+      </div>
+    </div>
+
+    <div class="cover-mid">
+      <div class="eyebrow on-dark">Multimodal AI Engineering Case Study</div>
+      <h1>Thedal <span>RAG Chatbot</span></h1>
+      <div class="tagline">UNIVERSAL WEBSITE-AWARE RAG CHATBOT WITH REAL-TIME VOICE AI</div>
+
+      <p class="cover-sub">Scalable Retrieval-Augmented Generation (RAG) architecture combining real-time website crawling, semantic vector retrieval, persistent FAISS indexing, multi-model AI inference fallback, Groq Whisper-v3 Speech-to-Text, and Deepgram Text-to-Speech into a plug-and-play conversational platform.</p>
+      <div class="prepared-for">Built with: <b>FastAPI, LangChain, FAISS, Python, Llama 70B, Nemotron, Qwen, Whisper-v3, Deepgram, React</b></div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-eyebrow">Key System Performance &amp; Architectural Metrics</div>
+      <div class="stat"><div class="num">4<span>Models</span></div><div class="lbl">Multi-Model AI Fallback (Llama 70B, Nemotron, Qwen, Llama 8B)</div></div>
+      <div class="stat"><div class="num">Real-Time</div><div class="lbl">Dynamic Web Crawling &amp; Semantic Document Processing</div></div>
+      <div class="stat"><div class="num">Multimodal</div><div class="lbl">Groq Whisper-v3 STT &amp; Deepgram TTS Voice Pipeline</div></div>
+      <div class="stat"><div class="num">Plug&amp;Play</div><div class="lbl">Universal RAG Infrastructure Across Multiple Domains</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 2 — CORE ARCHITECTURE & PROBLEM-SOLUTION ============ -->
+<div class="page" id="page-2">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Architecture Solution</div>
+        <div class="htitle">Core System Architecture &amp; Problem-Solution</div>
+        <div class="hsub">Transforming dynamic website content into searchable vector knowledge representations to provide real-time domain-specific answers.</div>
+      </div>
+    </div>
+
+    <div class="sec-h">Problem &amp; Solution Overview</div>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag gold">The Problem</span>
+        <h3>Generic Chatbot Limitations</h3>
+        <p>• Lack domain-specific knowledge of specific websites.<br>
+        • Produce hallucinated or generic responses.<br>
+        • Require manual knowledge-base preparation.<br>
+        • Struggle when underlying website content updates.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">The Solution</span>
+        <h3>Website-Aware RAG Engine</h3>
+        <p>• Real-time web crawling &amp; content extraction.<br>
+        • Automated document chunking &amp; embedding.<br>
+        • Persistent FAISS vector similarity search.<br>
+        • Multi-model LLM generation with voice I/O.</p>
+      </div>
+    </div>
+
+    <div class="sec-h">End-to-End System Architecture Diagram</div>
+    <div class="diagram-display-box">
+      <div class="diag-header">
+        <span class="diag-title">SYSTEM ARCHITECTURE DIAGRAM 1 — RAG PIPELINE &amp; MULTIMODAL VOICE ENGINE</span>
+      </div>
+      <div class="node-flow-canvas">
+        <div class="flow-pill pill-main">User (Text Query / Voice Query)</div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-pill pill-box">React Chatbot UI → FastAPI Backend</div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-split">
+          <div class="flow-pill pill-sub">Website Crawler → Embeddings → FAISS Index</div>
+          <div class="flow-pill pill-sub">Voice Pipeline (Whisper-v3 STT)</div>
+        </div>
+        <div class="flow-arrow-dn">↓ Context Retrieval</div>
+        <div class="flow-pill pill-box">Multi-Model Layer (Llama 70B, Nemotron, Qwen, Llama 8B)</div>
+        <div class="flow-arrow-dn">↓ Response Generation</div>
+        <div class="flow-split">
+          <div class="flow-pill pill-sub">Text UI Output</div>
+          <div class="flow-pill pill-sub">Deepgram TTS (Natural Voice Output)</div>
+        </div>
+      </div>
+      <details class="diag-details">
+        <summary>View Preserved Raw ASCII System Architecture Diagram</summary>
+        <pre><code class="ascii-code">User
+ │
+ ├── Text Query
+ │
+ └── Voice Query
+        │
+        ▼
+┌───────────────────────┐
+│    React Chatbot UI   │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│    FastAPI Backend    │
+└───────────┬───────────┘
+            │
+     ┌──────┴───────┐
+     │              │
+     ▼              ▼
+ Website Crawler   Voice Pipeline
+     │              │
+     ▼              ▼
+ Content          Whisper-v3
+ Processing       Speech-to-Text
+     │              │
+     ▼              ▼
+ Embeddings      User Query
+     │
+     ▼
+┌───────────────────────┐
+│   FAISS Vector Store  │
+└───────────┬───────────┘
+            │
+            ▼
+     Context Retrieval
+            │
+            ▼
+┌───────────────────────┐
+│   Multi-Model Layer   │
+│                       │
+│ Llama 70B             │
+│ Nemotron              │
+│ Qwen                  │
+│ Llama 8B              │
+└───────────┬───────────┘
+            │
+            ▼
+      Generated Answer
+            │
+       ┌────┴─────┐
+       │          │
+       ▼          ▼
+    Text UI    Deepgram TTS
+                  │
+                  ▼
+              Voice Output</code></pre>
+      </details>
+    </div>
+
+    <div class="p-footer"><span>THEDAL — UNIVERSAL WEBSITE-AWARE RAG CHATBOT WITH VOICE</span><span class="pg">PAGE 02 / 06</span></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 3 — CRAWLING & VECTOR INDEXING ============ -->
+<div class="page" id="page-3">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Data &amp; Retrieval</div>
+        <div class="htitle">Dynamic Crawling &amp; Persistent FAISS Indexing</div>
+        <div class="hsub">Automating knowledge ingestion via dynamic web crawling, text chunking, vector embeddings, and persistent FAISS indexing.</div>
+      </div>
+    </div>
+
+    <div class="sec-h">Website Ingestion &amp; Retrieval Pipeline</div>
+    <div class="diagram-display-box">
+      <div class="diag-header">
+        <span class="diag-title">DATA PIPELINE DIAGRAM 2 — CRAWLING TO SEMANTIC RETRIEVAL</span>
+      </div>
+      <div class="node-flow-canvas">
+        <div class="flow-pill pill-main">Target Website URL</div>
+        <div class="flow-arrow-dn">↓ Real-Time Web Crawler</div>
+        <div class="flow-pill pill-box">Content Extraction → Text Chunking → Vector Embeddings</div>
+        <div class="flow-arrow-dn">↓ Persistent Index Storage</div>
+        <div class="flow-pill pill-box">Persistent FAISS Vector Store</div>
+        <div class="flow-arrow-dn">↓ User Query Similarity Search</div>
+        <div class="flow-pill pill-main">Relevant Context Assembly → LLM Context Window</div>
+      </div>
+      <details class="diag-details">
+        <summary>View Preserved Raw ASCII Crawling &amp; Ingestion Workflow</summary>
+        <pre><code class="ascii-code">Website → Real-Time Crawler → Content Extraction → Document Processing → Embeddings → Persistent FAISS Index → Semantic Retrieval → Relevant Context → LLM → Contextual Response</code></pre>
+      </details>
+    </div>
+
+    <div class="sec-h">Persistent FAISS Vector Store Advantages</div>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag gold">Speed</span>
+        <h3>Faster Startup</h3>
+        <p>Eliminates index rebuilding delays on every session startup.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">Efficiency</span>
+        <h3>Reduced Compute</h3>
+        <p>Saves embedding API calls by storing vector state persistently.</p>
+      </div>
+      <div class="card">
+        <span class="tag navy">Scalability</span>
+        <h3>Persistent Knowledge</h3>
+        <p>Maintains domain indices across repeated multi-user conversations.</p>
+      </div>
+    </div>
+
+    <div class="dark-strip">
+      <div style="flex:1;">
+        <h4>Semantic Contextual Retrieval</h4>
+        <p>Executes FAISS L2/cosine similarity search against indexed chunks, selecting top-K contextually relevant document segments to condition the prompt before calling inference LLMs.</p>
+      </div>
+      <div class="chip-col">
+        <span>Persistent FAISS</span>
+        <span>Semantic Search</span>
+        <span>Zero Hallucination</span>
+      </div>
+    </div>
+
+    <div class="p-footer"><span>THEDAL — UNIVERSAL WEBSITE-AWARE RAG CHATBOT WITH VOICE</span><span class="pg">PAGE 03 / 06</span></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 4 — MULTI-MODEL RESILIENCE & VOICE AI ============ -->
+<div class="page" id="page-4">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Resilience &amp; Voice</div>
+        <div class="htitle">Multi-Model Fallback &amp; Voice AI Pipeline</div>
+        <div class="hsub">High-availability inference through model fallback routing coupled with Groq Whisper-v3 Speech-to-Text and Deepgram Text-to-Speech.</div>
+      </div>
+    </div>
+
+    <div class="sec-h">Multi-Model AI Fallback Routing Flow</div>
+    <div class="diagram-display-box">
+      <div class="diag-header">
+        <span class="diag-title">FALLBACK ROUTING DIAGRAM 3 — MULTI-MODEL INFERENCE RESILIENCE</span>
+      </div>
+      <div class="node-flow-canvas">
+        <div class="flow-pill pill-main">Contextual User Query</div>
+        <div class="flow-arrow-dn">↓ Primary Inference Call</div>
+        <div class="flow-pill pill-box">Llama 70B (Primary)</div>
+        <div class="flow-arrow-dn">↓ On Failure / Timeout</div>
+        <div class="flow-pill pill-sub">Nemotron → Qwen → Llama 8B (Fallback Chain)</div>
+        <div class="flow-arrow-dn">↓ Successful Response</div>
+        <div class="flow-pill pill-main">Synthesized Domain Answer</div>
+      </div>
+      <details class="diag-details">
+        <summary>View Preserved Raw ASCII Fallback Flow</summary>
+        <pre><code class="ascii-code">User Query → Primary Model (Llama 70B) ──[Failure]──> Next Model (Nemotron) ──[Failure]──> Next Model (Qwen) ──[Failure]──> Fallback (Llama 8B)</code></pre>
+      </details>
+    </div>
+
+    <div class="sec-h">Voice AI Architecture: Whisper-v3 &amp; Deepgram</div>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag gold">Speech-to-Text</span>
+        <h3>Groq Whisper-v3 STT</h3>
+        <p>Converts user voice input into high-accuracy text queries. Routes transcribed text directly into the RAG retrieval pipeline.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">Text-to-Speech</span>
+        <h3>Deepgram TTS</h3>
+        <p>Converts LLM-generated text responses into natural, fluid audio streams for immediate voice output playback.</p>
+      </div>
+    </div>
+
+    <div class="sec-h">Reliability Engineering Capabilities</div>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag navy">Auto Retry</span>
+        <h3>Automatic Retries</h3>
+        <p>Exponential backoff retries for transient API network glitches.</p>
+      </div>
+      <div class="card">
+        <span class="tag gold">Caching</span>
+        <h3>Response Caching</h3>
+        <p>Caches frequent vector queries to improve response speed.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">Resilience</span>
+        <h3>Model Routing</h3>
+        <p>Eliminates single point of failure by decoupling model vendors.</p>
+      </div>
+    </div>
+
+    <div class="p-footer"><span>THEDAL — UNIVERSAL WEBSITE-AWARE RAG CHATBOT WITH VOICE</span><span class="pg">PAGE 04 / 06</span></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 5 — BACKEND & TECHNICAL CHALLENGES ============ -->
+<div class="page" id="page-5">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Backend &amp; Challenges</div>
+        <div class="htitle">FastAPI, LangChain &amp; Technical Challenges</div>
+        <div class="hsub">Modular API orchestration with LangChain RAG management and solutions to real-time AI engineering challenges.</div>
+      </div>
+    </div>
+
+    <div class="sec-h">FastAPI &amp; LangChain Integration</div>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag gold">Backend Layer</span>
+        <h3>FastAPI Core Backend</h3>
+        <p>Coordinates chat endpoints, crawling tasks, FAISS retrieval, model routing, voice pipelines, and SSE response streams.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">Orchestration</span>
+        <h3>LangChain RAG Framework</h3>
+        <p>Manages document loaders, text splitters, prompt templates, vector store retrievers, and chain execution.</p>
+      </div>
+    </div>
+
+    <div class="sec-h">Plug-and-Play Universal Web Architecture</div>
+    <div class="card">
+      <h3>🌐 Universal Plug-and-Play Infrastructure</h3>
+      <p>Connects multiple distinct websites (Website A, Website B, Documentation Portals) to the same underlying FastAPI RAG infrastructure while maintaining isolated, persistent FAISS domain knowledge bases.</p>
+    </div>
+
+    <div class="sec-h">Key Technical Challenges &amp; Engineering Solutions</div>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag navy">Challenge 1 &amp; 2</span>
+        <h3>Dynamic Data &amp; Retrieval Speed</h3>
+        <p>• <b>Dynamic Knowledge:</b> Built incremental web crawler &amp; re-indexing pipeline.<br>
+        • <b>Retrieval Performance:</b> Persistent FAISS indices + query caching reduce search latency.</p>
+      </div>
+      <div class="card">
+        <span class="tag gold">Challenge 3 &amp; 4</span>
+        <h3>Model Fallback &amp; Voice Latency</h3>
+        <p>• <b>Model Failure:</b> Implemented 4-tier model fallback chain.<br>
+        • <b>Voice Latency:</b> Parallelized Groq Whisper-v3 STT &amp; Deepgram TTS streaming.</p>
+      </div>
+    </div>
+
+    <div class="p-footer"><span>THEDAL — UNIVERSAL WEBSITE-AWARE RAG CHATBOT WITH VOICE</span><span class="pg">PAGE 05 / 06</span></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 6 — SPECIFICATIONS & OUTCOMES ============ -->
+<div class="page" id="page-6">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Engineering Specifications</div>
+        <div class="htitle">Technology Stack, Query Flow &amp; Outcomes</div>
+        <div class="hsub">Complete tech stack matrix, end-to-end query lifecycle sequence, author contributions, and project takeaways.</div>
+      </div>
+    </div>
+
+    <div class="sec-h">Technology Stack Specifications</div>
+    <div class="card" style="margin-bottom:2mm;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>System Layer</th>
+            <th>Technology Selected</th>
+            <th>Architectural Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Backend API</strong></td>
+            <td>FastAPI (Python)</td>
+            <td>Asynchronous API Core &amp; Task Coordination</td>
+          </tr>
+          <tr>
+            <td><strong>RAG Framework</strong></td>
+            <td>LangChain</td>
+            <td>Pipeline Orchestration &amp; Context Management</td>
+          </tr>
+          <tr>
+            <td><strong>Vector Store</strong></td>
+            <td>FAISS</td>
+            <td>Persistent Similarity Vector Search</td>
+          </tr>
+          <tr>
+            <td><strong>Inference LLMs</strong></td>
+            <td>Llama 70B, Nemotron, Qwen, Llama 8B</td>
+            <td>Multi-Model Fallback Generation Layer</td>
+          </tr>
+          <tr>
+            <td><strong>Speech-to-Text</strong></td>
+            <td>Groq Whisper-v3</td>
+            <td>Low-Latency Speech Recognition</td>
+          </tr>
+          <tr>
+            <td><strong>Text-to-Speech</strong></td>
+            <td>Deepgram TTS</td>
+            <td>Natural Audio Synthesis Output</td>
+          </tr>
+          <tr>
+            <td><strong>Frontend UI</strong></td>
+            <td>React.js</td>
+            <td>Interactive Multimodal Chat Interface</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-h">End-to-End Query Lifecycle</div>
+    <div class="card" style="margin-bottom:2mm;">
+      <p><b>Lifecycle Sequence:</b> User Input (Text/Voice) → Whisper-v3 STT (if voice) → FastAPI Request → FAISS Semantic Search → Retrieve Chunks → Construct Context → Call Primary LLM (Llama 70B) → Execute Fallback if needed → Generate Answer → Return Text / Deepgram TTS Voice Playback.</p>
+    </div>
+
+    <div class="contribution-box">
+      <h4>Engineering Outcomes &amp; Key Learnings</h4>
+      <p>Successfully designed and deployed a universal website-aware RAG platform integrating <b>FastAPI + LangChain + FAISS + Multi-Model LLMs + Whisper-v3 + Deepgram + React</b>. Demonstrates practical expertise in RAG pipelines, vector databases, multi-model fallback resilience, dynamic web crawling, and multimodal voice interaction.</p>
+    </div>
+
+    <div class="p-footer" style="margin-top:auto;"><span>THEDAL — UNIVERSAL WEBSITE-AWARE RAG CHATBOT WITH VOICE</span><span class="pg">PAGE 06 / 06</span></div>
+  </div>
+</div>
+
+</body>
+</html>

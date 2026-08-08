@@ -1,14 +1,13 @@
 import { motion } from 'framer-motion';
 
 const certifications = [
-  "SQL Basics – HackerRank, 2024",
-  "Advanced Excel – Internshala, 2024",
-  "Microsoft Co-Pilot – Microsoft/LinkedIn, 2024",
-  "Coursera: Intro to Data Analysis with Excel, 2024",
-  "Accenture: Data Analytics & Visualization, 2024",
-  "Tata Group: Data Visualization, 2025",
-  "Deloitte Australia: Data Analytics, 2025",
-
+  "SQL Basics — HackerRank, 2024",
+  "Advanced Excel — Internshala, 2024",
+  "Microsoft Copilot — Microsoft / LinkedIn, 2024",
+  "Introduction to Data Analysis with Excel — Coursera, 2024",
+  "Data Analytics & Visualization — Accenture, 2024",
+  "Data Visualization — Tata Group, 2025",
+  "Data Analytics — Deloitte Australia, 2025"
 ];
 
 const educationList = [
@@ -29,14 +28,18 @@ const educationList = [
 ];
 
 const skills = [
-  { category: "Programming Languages", items: "Python" },
-  { category: "Python Libraries & Frameworks", items: "Pandas, NumPy, Matplotlib, Flask, FastAPI, WebSockets, ZeroMQ" },
-  { category: "Backend & APIs", items: "REST APIs, API Integration, Real-Time Data Processing, Event-Driven Architecture" },
-  { category: "AI / LLM Engineering", items: "Large Language Models (LLMs), LangChain, RAG Pipelines, Prompt Engineering, AI Chatbots" },
-  { category: "Speech & Audio Processing", items: "Speech-to-Text (STT), Audio Analytics, GroqAI, Deepgram, Voice AI Pipelines" },
-  { category: "Data Analytics & Visualization", items: "Power BI, Tableau, Data Analysis, Interactive Dashboards, Data Visualization" },
-  { category: "Microsoft Office Suite", items: "Microsoft Excel (Pivot Tables, VLOOKUP), PowerPoint, Word" },
-  { category: "Soft Skills", items: "Problem Solving, Effective Communication, Collaboration, Documentation, Requirement Analysis, Report Presentation, Deadline Management" },
+  { category: "Programming Languages", items: "Python, JavaScript, TypeScript, SQL" },
+  { category: "Python Libraries & Frameworks", items: "Pandas, NumPy, Matplotlib, FastAPI, Flask, SQLAlchemy, WebSockets, ZeroMQ" },
+  { category: "Frontend Development", items: "React, Next.js, HTML5, CSS3, Tailwind CSS, Progressive Web Apps (PWA)" },
+  { category: "Backend & APIs", items: "REST APIs, API Integration, Real-Time Data Processing, Event-Driven Architecture, WebSocket APIs, JWT Authentication" },
+  { category: "AI / LLM Engineering", items: "Large Language Models (LLMs), RAG Pipelines, LangChain, FAISS, Vector Search, Prompt Engineering, AI Chatbots, Multi-Model AI Systems" },
+  { category: "Speech & Voice AI", items: "Speech-to-Text (STT), Text-to-Speech (TTS), Voice AI Pipelines, Groq Whisper, Deepgram" },
+  { category: "Quantitative & Algorithmic Trading", items: "Algorithmic Trading, Quantitative Analysis, Options Trading, Trading Strategy Development, Backtesting, VWAP, SuperTrend, ATR, Real-Time Market Data, Trading APIs" },
+  { category: "Data Analytics & Visualization", items: "Power BI, Tableau, Data Analysis, Data Visualization, Interactive Dashboards, Excel, Power Query, Power Pivot" },
+  { category: "Databases & Infrastructure", items: "PostgreSQL, SQLite, Redis, SQLAlchemy, Docker, Docker Compose" },
+  { category: "AI Development Tools", items: "Antigravity, AI-Assisted Coding, AI-Powered Debugging, AI-Assisted Software Development" },
+  { category: "Developer Tools", items: "Git, GitHub, VS Code, Jupyter Notebook, Coolify" },
+  { category: "Soft Skills", items: "Problem Solving, Requirement Analysis, Technical Documentation, Communication, Collaboration, Project Management" },
 ];
 
 const EducationSkills = () => {
@@ -69,7 +72,7 @@ const EducationSkills = () => {
           </div>
 
           <h3 className="text-2xl text-vintage-burgundy mt-16 mb-8 flex items-center gap-4">
-            <span>Certifications</span>
+            <span>Certifications &amp; Virtual Experience</span>
             <span className="flex-grow h-[1px] bg-vintage-gold/30"></span>
           </h3>
 

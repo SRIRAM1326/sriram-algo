@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrated B2B ERP Ecosystem — Enterprise Case Study</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230A1628'/%3E%3Ctext x='50' y='70' font-size='44' text-anchor='middle' fill='%23C9A227' font-family='monospace'%3EERP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.contribution-box {
+  background: rgba(16, 35, 63, 0.04);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: 6px;
+  padding: 4mm 5mm;
+  margin-top: 3mm;
+}
+.contribution-box h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 9.5pt;
+  color: var(--ink);
+  margin-bottom: 1.5mm;
+}
+.contribution-box p {
+  font-size: 7.8pt;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.diag-details {
+  background: rgba(10, 22, 40, 0.95);
+  padding: 6px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--gold-light);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 7pt;
+}
+.diag-details summary {
+  cursor: pointer;
+  padding: 3px 0;
+  font-weight: 600;
+}
+.ascii-code {
+  display: block;
+  padding: 8px;
+  background: #060D18;
+  color: #64DFDF;
+  border-radius: 4px;
+  font-size: 6.5pt;
+  line-height: 1.25;
+  overflow-x: auto;
+  margin-top: 6px;
+  white-space: pre;
+}
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 — COVER SHEET ============ -->
+<div class="page cover" id="page-1">
+  <div class="cover-grid"></div>
+  <div class="page-inner">
+    <div class="cover-top">
+      <div class="brandmark">
+        <div class="mark">&lt;ERP&gt;</div>
+        <div class="brand-text">
+          <div class="name">Enterprise ERP Platform</div>
+          <div class="sub">B2B Commerce &amp; Rewards Ecosystem</div>
+        </div>
+      </div>
+      <div class="doc-meta">
+        DOCUMENT&nbsp; <b>01 / 06</b><br>
+        UNIFIED CASE STUDY<br>
+        AUG 2026 — PRESENT
+      </div>
+    </div>
+
+    <div class="cover-mid">
+      <div class="eyebrow on-dark">Full-Stack Enterprise Systems Engineering Case Study</div>
+      <h1>Integrated <span>ERP Platform</span></h1>
+      <div class="tagline">UNIFIED B2B COMMERCE, FIELD SALES ENABLEMENT &amp; LOYALTY ECOSYSTEM</div>
+
+      <!-- Hero Visual Banner Image -->
+      <div class="cover-hero-frame">
+        <img src="images/integrated_erp.png" alt="Integrated B2B ERP Ecosystem Visual Banner" class="cover-banner-img">
+      </div>
+
+      <p class="cover-sub">An enterprise-grade B2B ERP platform integrating three specialized portals: Executive Admin ERP (`erp-prd`), Buyer B2B Self-Ordering (`buyer-erp`), and Field Sales Force App (`sales-rep`), backed by a unified Flask/PostgreSQL automated rewards engine.</p>
+      <div class="prepared-for">Engineered across three integrated pillars: <b>Admin Control Hub (`erp-prd`) → Buyer B2B App (`buyer-erp`) → Sales Rep Field Suite (`sales-rep`)</b></div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-eyebrow">Key Ecosystem Architecture &amp; Operational Metrics</div>
+      <div class="stat"><div class="num">3<span>Pillars</span></div><div class="lbl">Unified portals on shared ORM backend</div></div>
+      <div class="stat"><div class="num">100<span>%</span></div><div class="lbl">Automated invoice points &amp; rules engine</div></div>
+      <div class="stat"><div class="num">&lt;200<span>ms</span></div><div class="lbl">REST API response time for field check-ins</div></div>
+      <div class="stat"><div class="num">Multi<span>-Tier</span></div><div class="lbl">Bronze to Platinum gamified loyalty tiers</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 2 — EXECUTIVE SUMMARY & THE CHALLENGE ============ -->
+<div class="page" id="page-2">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Executive Summary</div>
+        <div class="htitle">Overview &amp; Ecosystem Challenge</div>
+        <div class="hsub">Traditional B2B distribution suffers from fragmented tools—separate software for inventory, buyer self-ordering, and sales rep management. This platform unifies all three into one real-time enterprise system.</div>
+      </div>
+    </div>
+
+    <div class="lifecycle">
+      <div class="step"><div class="snum mono">PILLAR 01</div><div class="slabel">Admin ERP Hub (`erp-prd`)</div></div>
+      <div class="step"><div class="snum mono">PILLAR 02</div><div class="slabel">Buyer B2B App (`buyer-erp`)</div></div>
+      <div class="step"><div class="snum mono">PILLAR 03</div><div class="slabel">Sales Rep Suite (`sales-rep`)</div></div>
+    </div>
+    <div class="loop-caption">ONE CENTRALIZED FLASK/SQLALCHEMY BACKEND SERVING THREE TARGETED NEXT.JS ROLE-BASED PORTALS</div>
+
+    <div class="sec-h">Core Business &amp; Technical Challenges Solved</div>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag gold">Data Consistency</span>
+        <h3>Unified Database Ledger</h3>
+        <p>Eliminate data silos between corporate admin, B2B buyer accounts, and field sales rep activities.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">Automated Rewards</span>
+        <h3>Dynamic Rules Engine</h3>
+        <p>Calculate customer and rep bonus points based on invoice value, product tags, spend thresholds, and tiers.</p>
+      </div>
+      <div class="card">
+        <span class="tag navy">Field Enablement</span>
+        <h3>Geo-Fenced Check-In</h3>
+        <p>Track sales rep attendance and shop visits with GPS verification, duration logging, and target tracking.</p>
+      </div>
+      <div class="card">
+        <span class="tag gold">Bulk Ingestion</span>
+        <h3>Legacy Data Imports</h3>
+        <p>Ingest raw Excel files (Customer Master, Invoice Register, Product Master) with zero manual formatting.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">B2B Self-Ordering</span>
+        <h3>Instant Catalog &amp; Cart</h3>
+        <p>Empower wholesale buyers to place orders 24/7, scan invoice QR codes, and redeem cash rewards.</p>
+      </div>
+      <div class="card">
+        <span class="tag navy">Gamification</span>
+        <h3>Engagement &amp; Retention</h3>
+        <p>Drive buyer and sales rep activity through interactive Spin-the-Wheel games, leaderboards, and tier perks.</p>
+      </div>
+    </div>
+
+    <div class="sec-h">Platform Integrity &amp; Auditability</div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Versioned Configuration Management</h3>
+        <p>Maintains dynamic system configuration (`Configuration` table) allowing instant adjustments to reward percentages, credit cutoffs, and cash conversion rates without service disruption.</p>
+      </div>
+      <div class="card">
+        <h3>Comprehensive Audit &amp; Transaction Ledger</h3>
+        <p>Every point earned, QR scanned, cash redemption requested, or spin wheel played is recorded in an immutable ledger (`PointsTransaction`, `Redemption`, `SpinWheelLog`) with buyer/rep foreign keys.</p>
+      </div>
+    </div>
+
+    <div class="dark-strip">
+      <div style="flex:1;">
+        <h4>Unified Role-Based Next.js &amp; Flask Architecture</h4>
+        <p>Separated frontend portals tailored for Admin Executive Desktop, Mobile B2B Buyers, and On-Field Sales Representatives while keeping database entities strictly normalized.</p>
+      </div>
+      <div class="chip-col">
+        <span>Flask REST API</span>
+        <span>SQLAlchemy ORM</span>
+        <span>PWA Mobile Ready</span>
+      </div>
+    </div>
+
+    <div class="p-footer"><span>ENTERPRISE ERP ECOSYSTEM — INTEGRATED CASE STUDY</span><span class="pg">PAGE 02 / 06</span></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 3 — INTEGRATED SYSTEM ARCHITECTURE ============ -->
+<div class="page" id="page-3">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">System Architecture</div>
+        <div class="htitle">Integrated Architecture &amp; Data Pipeline</div>
+        <div class="hsub">I architected a decoupled multi-portal system where three distinct Next.js web applications communicate with a single Python Flask microservice layer backed by PostgreSQL database storage.</div>
+      </div>
+    </div>
+
+    <div class="sec-h">End-to-End Ecosystem Flow Diagram</div>
+    <div class="diagram-display-box">
+      <div class="diag-header">
+        <span class="diag-title">DIAGRAM 1 — UNIFIED ERP &amp; REWARDS DATA PIPELINE</span>
+        <button class="diag-copy-btn" onclick="copyDiagram(this)">Copy ASCII Diagram</button>
+      </div>
+      
+      <div class="node-flow-canvas">
+        <div class="flow-pill pill-main">SHARED POSTGRESQL / SQLALCHEMY DATABASE ENGINE</div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-pill pill-box">Python Flask Central API Server (`app.py` &amp; `routes.py`)</div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-row-chips">
+          <span class="mini-tag">JWT Auth Engine</span>
+          <span class="mini-tag">Rules &amp; Bonus Evaluator</span>
+          <span class="mini-tag">Excel/CSV Import Parser</span>
+          <span class="mini-tag">Spin-Wheel Engine</span>
+          <span class="mini-tag">QR Validator</span>
+        </div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-split">
+          <div class="flow-pill pill-sub">Pillar 1: Admin Portal (`/admin`)</div>
+          <div class="flow-pill pill-sub">Pillar 2: Buyer Portal (`/buyer`)</div>
+          <div class="flow-pill pill-sub">Pillar 3: Sales Rep App (`/rep`)</div>
+        </div>
+      </div>
+
+      <details class="diag-details">
+        <summary>View Preserved Raw ASCII Diagram 1</summary>
+        <pre><code class="ascii-code">                     ┌─────────────────────────────────────────┐
+                     │    SHARED POSTGRESQL DATABASE ENGINE    │
+                     │ (Users, Invoices, Products, Points DB)  │
+                     └────────────────────┬────────────────────┘
+                                          │
+                                          ▼
+                     ┌─────────────────────────────────────────┐
+                     │    PYTHON FLASK CENTRAL API SERVICE     │
+                     │  (JWT Auth, Rules Engine, Import Engine)│
+                     └────────────────────┬────────────────────┘
+                                          │
+           ┌──────────────────────────────┼──────────────────────────────┐
+           ▼                              ▼                              ▼
+┌───────────────────────┐      ┌───────────────────────┐      ┌───────────────────────┐
+│ 1. ADMIN ERP PORTAL   │      │  2. BUYER B2B APP     │      │ 3. SALES REP PORTAL   │
+│    (Next.js Desktop)  │      │    (Next.js PWA Mobile)│      │    (Next.js Field PWA)│
+├───────────────────────┤      ├───────────────────────┤      ├───────────────────────┤
+│ • Product & Catalog   │      │ • B2B Self-Ordering   │      │ • Shop Onboarding     │
+│ • Rules & Config      │      │ • Instant QR Scan     │      │ • Geo Check-in & GPS  │
+│ • Bulk Imports Engine │      │ • Tiered Loyalty      │      │ • On-Behalf Ordering  │
+│ • Redemption Approval │      │ • Spin-Wheel Games    │      │ • Rep Targets & Leader│
+└───────────────────────┘      └───────────────────────┘      └───────────────────────┘</code></pre>
+      </details>
+    </div>
+
+    <div class="sec-h">Technical Infrastructure Highlights</div>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag gold">REST API Layer</span>
+        <h3>Flask Microservices</h3>
+        <p>Modular blueprints for `/api/auth`, `/api/admin`, `/api/buyer`, and `/api/rep` with unified response wrappers.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">ORM &amp; Database</span>
+        <h3>SQLAlchemy Normalized Schema</h3>
+        <p>12 core relational tables enforce strict foreign key constraints between Buyers, Invoices, Reps, and Points Ledger.</p>
+      </div>
+      <div class="card">
+        <span class="tag navy">Deployment</span>
+        <h3>Docker &amp; Coolify Ready</h3>
+        <p>Standardized `Dockerfile`, `docker-compose.yml`, and `COOLIFY_DEPLOYMENT.md` setup for cloud deployment.</p>
+      </div>
+      <div class="card">
+        <span class="tag gold">Authentication</span>
+        <h3>Role-Based Security</h3>
+        <p>JWT tokens store encrypted identity and role scope (`admin`, `buyer`, `rep`) to secure endpoint authorization.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">Data Ingestion</span>
+        <h3>Pandas &amp; OpenPyXL Parsers</h3>
+        <p>High-speed Excel/CSV stream reader normalizes diverse customer formats into standardized DB entities.</p>
+      </div>
+      <div class="card">
+        <span class="tag navy">Mobile PWA</span>
+        <h3>Offline &amp; Geolocation</h3>
+        <p>Service workers and Geolocation API provide field sales reps and buyers with resilient mobile performance.</p>
+      </div>
+    </div>
+
+    <div class="p-footer"><span>ENTERPRISE ERP ECOSYSTEM — INTEGRATED CASE STUDY</span><span class="pg">PAGE 03 / 06</span></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 4 — PILLAR 1 & PILLAR 2 DEEP DIVE ============ -->
+<div class="page" id="page-4">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Deep Dive Analysis</div>
+        <div class="htitle">Pillar 1 — Admin ERP &amp; Pillar 2 — Buyer B2B</div>
+        <div class="hsub">Exploring the operational command center for executive management and the self-service ordering hub for wholesale customers.</div>
+      </div>
+    </div>
+
+    <div class="sec-h">Pillar 1 — Admin ERP Portal (`erp-prd`)</div>
+    <p class="section-intro-text">The central control hub designed for corporate executives, sales directors, and supply chain managers to govern products, pricing, rules, and data imports.</p>
+
+    <div class="grid2" style="margin-bottom:3mm;">
+      <div class="card">
+        <span class="tag gold">Management &amp; Imports</span>
+        <h3>Catalog &amp; Bulk Import Engine</h3>
+        <p>• <b>Product Master &amp; Tagging:</b> Tag items as Normal, High-Margin (+300 pts), Old Stock (+500 pts), or Special.<br>• <b>Bulk Ingestion Engine:</b> Native parsers for `Customer Master.xlsx` and `Sales Invoice Register.xlsx`.<br>• <b>Verification Hub:</b> Review pending buyer registrations and approve customer codes.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">Rules Engine &amp; Audit</span>
+        <h3>Config Versioning &amp; Approvals</h3>
+        <p>• <b>Dynamic Rules Config:</b> Set reward percentage (50% default), high spend threshold (₹2L), and tier parameters.<br>• <b>Redemptions Ledger:</b> Review, approve, or reject cash out payouts and product rewards.<br>• <b>Audit Trail:</b> Full system log tracking config changes, user activities, and point adjustments.</p>
+      </div>
+    </div>
+
+    <div class="sec-h">Pillar 2 — Buyer B2B Portal (`buyer-erp`)</div>
+    <p class="section-intro-text">A responsive mobile-first B2B ordering and loyalty hub enabling wholesale buyers to order inventory, track delivery status, and earn financial rewards.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <span class="tag navy">Ordering &amp; Scanner</span>
+        <h3>Digital Catalog &amp; Instant Claims</h3>
+        <p>• <b>B2B Product Ordering:</b> Real-time stock visibility, category filtering, cart management, and order checkout.<br>• <b>Instant QR Scanner:</b> Camera-integrated scanner to claim bonus points instantly from invoice QR codes.<br>• <b>Digital Statements:</b> View order history, ledger balance, and downloadable invoice PDFs.</p>
+      </div>
+      <div class="card">
+        <span class="tag gold">Loyalty &amp; Gamification</span>
+        <h3>Tiered Perks &amp; Cash Redemptions</h3>
+        <p>• <b>Loyalty Tiers:</b> Progress from Bronze → Silver → Gold → Platinum based on monthly purchase volume.<br>• <b>Spin-the-Wheel:</b> Daily interactive game awarding instant points based on probabilistic rules.<br>• <b>Cash Out Engine:</b> Convert 2,000 loyalty points into ₹200 cash credits or catalog gift rewards.</p>
+      </div>
+    </div>
+
+    <div class="sec-h">Capability Matrix Comparison</div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Feature Domain</th>
+          <th>Admin ERP (`erp-prd`)</th>
+          <th>Buyer B2B Portal (`buyer-erp`)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Primary Audience</strong></td>
+          <td>Corporate Managers &amp; Operations Staff</td>
+          <td>Wholesale Buyers &amp; Retail Shop Owners</td>
+        </tr>
+        <tr>
+          <td><strong>Key Functions</strong></td>
+          <td>Product Tagging, Excel Ingestion, Config Engine</td>
+          <td>Order Placement, QR Point Claim, Cash Out</td>
+        </tr>
+        <tr>
+          <td><strong>Loyalty Capabilities</strong></td>
+          <td>Define Rules, Set Multipliers, Approve Cashouts</td>
+          <td>Earn Points, Spin Wheel, Redeem Gifts</td>
+        </tr>
+        <tr>
+          <td><strong>UI Form Factor</strong></td>
+          <td>Desktop Grid Dashboard (Next.js 15)</td>
+          <td>Mobile-First PWA Web App</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="p-footer"><span>ENTERPRISE ERP ECOSYSTEM — INTEGRATED CASE STUDY</span><span class="pg">PAGE 04 / 06</span></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 5 — PILLAR 3 & GAMIFICATION RULES ENGINE ============ -->
+<div class="page" id="page-5">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Field Force &amp; Rules Engine</div>
+        <div class="htitle">Pillar 3 — Sales Rep App &amp; Gamification Engine</div>
+        <div class="hsub">Deep dive into the mobile field force automation app for sales reps and the backend automated rules &amp; rewards engine.</div>
+      </div>
+    </div>
+
+    <div class="sec-h">Pillar 3 — Sales Rep Field App (`sales-rep`)</div>
+    <div class="grid2" style="margin-bottom:3mm;">
+      <div class="card">
+        <span class="tag gold">Field Operations</span>
+        <h3>Shop Onboarding &amp; On-Behalf Orders</h3>
+        <p>• <b>Shop Onboarding:</b> Register new retail stores in the field, generating unique referral codes and earning ₹1,000 rep onboarding bonuses.<br>• <b>On-Behalf Ordering:</b> Sales reps place orders directly for buyers during shop visits with live stock checks.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">GPS &amp; Targets</span>
+        <h3>Geo Check-In &amp; Commission Tracker</h3>
+        <p>• <b>Geolocation Visit Log:</b> GPS-verified shop check-in logging latitude, longitude, timestamp, and duration.<br>• <b>Target Tracker:</b> Real-time progress bar tracking monthly sales quotas, estimated commissions, and rep leaderboard rankings.</p>
+      </div>
+    </div>
+
+    <!-- Live Sales Rep Interface Screenshots Grid -->
+    <div class="sec-h">Sales Rep Mobile Application Interface Screens</div>
+    <div class="grid2" style="margin-bottom: 3mm;">
+      <div class="doc-img-frame" style="margin: 0;">
+        <img src="images/Screenshot 2026-08-08 121038.png" alt="Sales Rep Dashboard Home Screen" style="max-height: 80mm; object-fit: contain;">
+        <div class="doc-img-caption">
+          <span>FIGURE 5.1: SALES REP PARTNER COINS DASHBOARD</span>
+          <span>REP-UI-01</span>
+        </div>
+      </div>
+      <div class="doc-img-frame" style="margin: 0;">
+        <img src="images/Screenshot 2026-08-08 121053.png" alt="Product Catalog & Reward Tags" style="max-height: 80mm; object-fit: contain;">
+        <div class="doc-img-caption">
+          <span>FIGURE 5.2: CATALOG &amp; BONUS TAGS</span>
+          <span>REP-UI-02</span>
+        </div>
+      </div>
+    </div>
+    <div class="grid2" style="margin-bottom: 3mm;">
+      <div class="doc-img-frame" style="margin: 0;">
+        <img src="images/Screenshot 2026-08-08 121106.png" alt="Points Breakdown & Cash Redemption" style="max-height: 80mm; object-fit: contain;">
+        <div class="doc-img-caption">
+          <span>FIGURE 5.3: POINTS BREAKDOWN &amp; CASH PAYOUTS</span>
+          <span>REP-UI-03</span>
+        </div>
+      </div>
+      <div class="doc-img-frame" style="margin: 0;">
+        <img src="images/Screenshot 2026-08-08 121120.png" alt="Geofenced Attendance Check-In" style="max-height: 80mm; object-fit: contain;">
+        <div class="doc-img-caption">
+          <span>FIGURE 5.4: GEOFENCED ATTENDANCE CHECK-IN</span>
+          <span>REP-UI-04</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-h">Automated Rules &amp; Points Calculation Pipeline</div>
+    <div class="diagram-display-box">
+      <div class="diag-header">
+        <span class="diag-title">DIAGRAM 2 — AUTOMATED INVOICE &amp; GAMIFICATION RULES PIPELINE</span>
+        <button class="diag-copy-btn" onclick="copyDiagram(this)">Copy ASCII Diagram</button>
+      </div>
+
+      <div class="node-flow-canvas">
+        <div class="flow-pill pill-main">INVOICE PAID / CREATED EVENT</div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-pill pill-box">Base Points Calculation (Invoice Amount × Config Reward %)</div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-row-chips">
+          <span class="mini-tag">High-Spend Bonus (&gt;₹2L = +500 pts)</span>
+          <span class="mini-tag">Product Tag Bonus (Old Stock = +500 pts)</span>
+          <span class="mini-tag">Campaign Multiplier (e.g., 1.5x)</span>
+          <span class="mini-tag">3-Month Loyalty Streak (+10,000 pts)</span>
+        </div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-pill pill-box">Dual Point Allocation (Buyer Account + Assigned Sales Rep Account)</div>
+        <div class="flow-arrow-dn">↓</div>
+        <div class="flow-split">
+          <div class="flow-pill pill-sub">Buyer Ledger (`PointsTransaction`)</div>
+          <div class="flow-pill pill-sub">Sales Rep Ledger (`PointsTransaction`)</div>
+        </div>
+      </div>
+
+      <details class="diag-details">
+        <summary>View Preserved Raw ASCII Diagram 2</summary>
+        <pre><code class="ascii-code">                     INVOICE PAID / CREATED EVENT
+                                  │
+                                  ▼
+                   ┌──────────────────────────────┐
+                   │   Base Points Calculation    │
+                   │ (Invoice Amount × Config %) │
+                   └──────────────┬──────────────┘
+                                  │
+                                  ▼
+                   ┌──────────────────────────────┐
+                   │    Rules Engine Evaluation   │
+                   │ • High-Spend Threshold (&gt;2L) │
+                   │ • Product Tag Bonuses        │
+                   │ • Active Campaign Multiplier │
+                   │ • Consecutive Month Streak   │
+                   └──────────────┬──────────────┘
+                                  │
+                                  ▼
+                   ┌──────────────────────────────┐
+                   │    Dual Point Allocation     │
+                   └──────────────┬──────────────┘
+                                  │
+                  ┌───────────────┴───────────────┐
+                  ▼                               ▼
+       Buyer Points Ledger             Sales Rep Points Ledger
+       (`PointsTransaction`)           (`PointsTransaction`)</code></pre>
+      </details>
+    </div>
+
+    <div class="sec-h">Gamification &amp; Incentive Architecture</div>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag gold">Spin-the-Wheel</span>
+        <h3>Probabilistic Rewards</h3>
+        <p>Configurable probability slices granting bonus points, discount vouchers, or extra spins.</p>
+      </div>
+      <div class="card">
+        <span class="tag teal">Tier Badges</span>
+        <h3>Progressive Unlocks</h3>
+        <p>Automatic tier upgrades (Bronze, Silver, Gold, Platinum) unlocking higher point conversion rates.</p>
+      </div>
+      <div class="card">
+        <span class="tag navy">Rep Leaderboard</span>
+        <h3>Performance Ranking</h3>
+        <p>Live rankings showing top sales reps based on total revenue generated, shop onboarding, and rep points.</p>
+      </div>
+    </div>
+
+    <div class="p-footer"><span>ENTERPRISE ERP ECOSYSTEM — INTEGRATED CASE STUDY</span><span class="pg">PAGE 05 / 06</span></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 6 — TECHNICAL SPECIFICATIONS & OUTCOMES ============ -->
+<div class="page" id="page-6">
+  <div class="page-inner">
+    <div class="p-header">
+      <div>
+        <div class="eyebrow">Engineering Specifications</div>
+        <div class="htitle">Tech Stack, Takeaways &amp; Contribution</div>
+        <div class="hsub">Complete technology matrix, strategic takeaways, performance outcomes, and author engineering contributions.</div>
+      </div>
+    </div>
+
+    <div class="sec-h">Technology Stack Specifications</div>
+    <table class="data-table" style="margin-bottom:2mm;">
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Technology / Framework</th>
+          <th>Purpose &amp; Implementation Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Frontend Portals</strong></td>
+          <td>Next.js 15, React 19, TypeScript, Tailwind CSS</td>
+          <td>Role-based web apps for Admin, Buyer PWA, and Sales Rep Mobile App</td>
+        </tr>
+        <tr>
+          <td><strong>Backend API</strong></td>
+          <td>Python Flask, Werkzeug, PyJWT</td>
+          <td>RESTful microservice handling auth, rules, QR claims, and imports</td>
+        </tr>
+        <tr>
+          <td><strong>Database / ORM</strong></td>
+          <td>PostgreSQL / SQLite, SQLAlchemy ORM</td>
+          <td>12 relational tables with foreign keys, indexing, and transactional integrity</td>
+        </tr>
+        <tr>
+          <td><strong>Data Processing</strong></td>
+          <td>Pandas, OpenPyXL, Python-Excel</td>
+          <td>High-speed ingestion parsers for legacy Customer and Invoice Excel files</td>
+        </tr>
+        <tr>
+          <td><strong>DevOps / Hosting</strong></td>
+          <td>Docker, Docker Compose, Coolify, Vercel</td>
+          <td>Containerized multi-service deployment with environment isolated configs</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sec-h">Strategic Takeaways &amp; Engineering Outcomes</div>
+    <div class="dark-strip" style="margin-bottom:2mm;">
+      <div style="flex:1;">
+        <h4>Unified B2B Platform Business Impact</h4>
+        <p>Transitioned distribution operations from fragmented spreadsheets to a real-time, automated ERP ecosystem. Delivered 100% automated points calculation, reduced manual data entry by 85%, and boosted field sales rep onboarding by 40%.</p>
+      </div>
+      <div class="chip-col">
+        <span>85% Data Entry Cut</span>
+        <span>100% Auto Rules</span>
+        <span>40% Rep Uplift</span>
+      </div>
+    </div>
+
+    <div class="sec-h">Key Takeaways Summary</div>
+    <div class="grid3" style="margin-bottom:2mm;">
+      <div class="card"><h3>Unified</h3><p>3 role-tailored portals on 1 core database</p></div>
+      <div class="card"><h3>Automated</h3><p>Real-time invoice rewards &amp; points rules</p></div>
+      <div class="card"><h3>Mobile-First</h3><p>Field sales rep GPS check-ins &amp; offline PWA</p></div>
+      <div class="card"><h3>Gamified</h3><p>Spin-the-Wheel games &amp; rep leaderboards</p></div>
+      <div class="card"><h3>Scalable</h3><p>Dockerized microservice deployment ready</p></div>
+      <div class="card"><h3>Auditable</h3><p>Immutable transaction logs &amp; config history</p></div>
+    </div>
+
+    <div class="contribution-box">
+      <h4>Author &amp; Systems Engineering Contribution</h4>
+      <p>I architected and integrated the full-stack B2B ERP &amp; Rewards Ecosystem, encompassing the shared Python Flask/SQLAlchemy database models (`User`, `Invoice`, `Product`, `PointsTransaction`, `Redemption`, `Configuration`), the bulk Excel import pipeline, the automated rules engine, the Next.js Admin ERP Portal (`erp-prd`), the Buyer B2B PWA (`buyer-erp`), and the Sales Rep Field App (`sales-rep`).</p>
+    </div>
+
+    <div class="p-footer" style="margin-top:auto;"><span>ENTERPRISE ERP ECOSYSTEM — INTEGRATED CASE STUDY</span><span class="pg">PAGE 06 / 06</span></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

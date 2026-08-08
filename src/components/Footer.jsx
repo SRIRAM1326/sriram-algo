@@ -8,7 +8,7 @@ const Footer = () => {
       </div>
 
       <p className="font-sans text-xs md:text-sm text-vintage-charcoal/60 uppercase tracking-[0.2em]">
-        © {currentYear} Sriram M. All Rights Reserved.
+        © {currentYear} S R I R A M &nbsp; M. All Rights Reserved.
       </p>
       <p className="font-serif italic text-sm text-vintage-charcoal/50 mt-3">
         Designed with a classic aesthetic.

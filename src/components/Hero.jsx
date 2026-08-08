@@ -28,19 +28,19 @@ const Hero = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2 }}
-        className="text-center z-10 max-w-3xl"
+        className="text-center z-10 max-w-4xl w-full"
       >
         <p className="font-sans text-vintage-gold uppercase tracking-[0.3em] text-xs mb-6 font-semibold">
           Portfolio
         </p>
-        <h1 className="text-6xl md:text-8xl mb-8 tracking-tighter text-shadow-elegant">
-          Sriram M
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-wider text-shadow-elegant uppercase font-serif whitespace-nowrap">
+          S R I R A M &nbsp; M
         </h1>
         <h2 className="font-serif text-vintage-burgundy text-lg md:text-xl lg:text-2xl font-medium tracking-wide mb-4 text-shadow-sm">
           Where Quantitative Engineering Meets Modern Artificial Intelligence
         </h2>
         <p className="font-sans text-vintage-charcoal/70 text-sm md:text-base leading-relaxed mb-12 max-w-2xl mx-auto font-light">
-          Algorithmic Trading Developer specializing in low-latency event-driven architectures, AI integrations, and production-grade trading systems.
+          Quantitative &amp; AI Developer specializing in algorithmic trading systems, RAG-powered applications, real-time data architectures, and production-grade full-stack solutions.
         </p>
 
         <div className="flex flex-row flex-nowrap gap-2 md:gap-4 justify-center items-center font-sans text-[10px] md:text-xs text-vintage-charcoal/80 mb-12 w-full max-w-full">
