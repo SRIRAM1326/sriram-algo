@@ -13,6 +13,7 @@
   --font-serif: "Playfair Display", "Cormorant Garamond", serif;
   --font-sans: "Inter", "Lora", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
+  --font-script: "Pinyon Script", "Great Vibes", "Alex Brush", cursive;
 }
 
 @layer base {
