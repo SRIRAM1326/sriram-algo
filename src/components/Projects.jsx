@@ -183,97 +183,87 @@ const posters = [
 const ProjectCard = ({ project, index, onOpenCaseStudy, onOpenPosterModal }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group relative border border-vintage-gold/25 bg-white/50 backdrop-blur-sm hover:bg-white/70 hover:border-vintage-gold/60 transition-all duration-500 rounded-sm flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-md h-full"
+      transition={{ duration: 0.6, delay: (index % 3) * 0.1, ease: "easeOut" }}
+      className="group relative h-full rounded-[40px]"
     >
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-vintage-gold/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"></div>
+      {/* iOS Glassmorphic Card Container */}
+      <div className="bg-white/70 backdrop-blur-3xl rounded-[40px] shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-white/80 flex flex-col overflow-hidden h-full relative group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 group-hover:-translate-y-1">
+        
+        {/* Inner Highlight for depth */}
+        <div className="absolute inset-0 rounded-[40px] pointer-events-none shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] z-30"></div>
 
-      <div>
-        {/* Project Screenshot Header */}
-        {project.image && (
-          <div className="overflow-hidden border-b border-vintage-gold/20 relative group bg-vintage-charcoal/5">
-            <div className="absolute inset-0 bg-vintage-burgundy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
+        {/* Top Visual */}
+        <div className="relative h-48 md:h-56 w-full shrink-0 overflow-hidden z-10 bg-gray-100/50">
+          {project.image ? (
             <img 
               src={project.image} 
               alt={project.title} 
-              className="w-full h-52 md:h-60 object-cover object-top opacity-95 group-hover:opacity-100 transform group-hover:scale-105 transition-all duration-700" 
+              className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300" 
               loading="lazy"
             />
-          </div>
-        )}
-
-        {/* Card Content Body */}
-        <div className="p-6 md:p-8">
-          <div className="mb-3">
-            <h3 className="text-2xl font-serif text-vintage-charcoal mb-1 leading-snug">
-              {project.title}
-            </h3>
-            <p className="font-sans text-xs tracking-widest uppercase text-vintage-gold font-semibold">{project.subtitle}</p>
-          </div>
-
-          {project.description && (
-            <p className="font-sans text-sm text-vintage-charcoal/80 leading-relaxed mb-5">
-              {project.description}
-            </p>
+          ) : (
+            <div className="w-full h-full bg-black/5"></div>
           )}
 
+          {/* Floating Glassmorphic Chips (iOS Style) */}
           {project.technologies && (
-            <div className="mb-5 flex flex-wrap gap-1.5 items-center">
-              {project.technologies.split('•').map((tech, i) => (
-                <span key={i} className="px-2.5 py-1 text-xs font-mono bg-vintage-gold/10 text-vintage-burgundy border border-vintage-gold/20 rounded-sm">
+            <div className="absolute top-4 left-4 right-4 flex flex-wrap gap-2 z-20">
+              {project.technologies.split('•').slice(0, 3).map((tech, i) => (
+                <span key={i} className="px-3 py-1.5 bg-white/60 backdrop-blur-md border border-white/80 text-gray-800 text-[9px] font-bold uppercase tracking-widest rounded-full shadow-sm">
                   {tech.trim()}
                 </span>
               ))}
             </div>
           )}
-
-          {project.highlight && (
-            <div className="mb-2 inline-flex items-center gap-2 px-3 py-1.5 bg-vintage-burgundy/5 border border-vintage-burgundy/20 rounded-sm text-xs font-medium text-vintage-burgundy">
-              <span>❖</span>
-              <span>{project.highlight}</span>
-            </div>
-          )}
         </div>
-      </div>
 
-      {/* Card Action Footer */}
-      <div className="px-6 pb-6 md:px-8 md:pb-8 pt-0 flex flex-wrap items-center justify-between gap-3 mt-auto">
-        {project.link && (
-          <a 
-            href={project.link.startsWith('http') ? project.link : `https://${project.link}`} 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-xs font-sans uppercase tracking-widest text-vintage-gold hover:text-vintage-burgundy font-semibold transition-colors flex items-center gap-1"
-          >
-            Visit Site ↗
-          </a>
-        )}
+        {/* Card Content Body */}
+        <div className="px-6 md:px-8 pb-8 flex flex-col flex-grow z-20 relative bg-gradient-to-b from-white/80 to-white/30 pt-4 -mt-2">
+          <div className="mb-3">
+            <p className="font-sans text-[10px] tracking-widest uppercase text-granger-primary font-bold mb-2">
+              {project.subtitle}
+            </p>
+            <h3 className="text-xl md:text-2xl font-sans font-bold text-gray-900 mb-2 tracking-tight leading-[1.2]">
+              {project.title}
+            </h3>
+          </div>
 
-        {project.posterImage && (
-          <button
-            onClick={() => onOpenPosterModal({
-              title: `${project.title} Poster`,
-              subtitle: project.subtitle,
-              image: project.posterImage,
-              caseStudyUrl: project.caseStudyUrl
-            })}
-            className="text-xs font-sans uppercase tracking-wider text-vintage-burgundy hover:text-vintage-gold font-semibold transition-colors flex items-center gap-1 cursor-pointer bg-vintage-gold/10 px-2.5 py-1 rounded border border-vintage-gold/30 hover:border-vintage-gold"
-          >
-            <span>🖼️ View Poster</span>
-          </button>
-        )}
+          {project.description && (
+            <p className="font-sans text-xs md:text-sm text-gray-600 font-medium leading-[1.6] mb-6">
+              {project.description}
+            </p>
+          )}
 
-        {project.caseStudyUrl && (
-          <button 
-            onClick={() => onOpenCaseStudy(project)}
-            className="text-xs font-sans uppercase tracking-widest text-vintage-gold hover:text-vintage-burgundy font-semibold transition-colors flex items-center gap-1 cursor-pointer ml-auto group/btn"
-          >
-            <span>View Case Study →</span>
-          </button>
-        )}
+          {/* Action Buttons (iOS Style) */}
+          <div className="mt-auto pt-2 flex flex-wrap items-center gap-2.5">
+            {project.caseStudyUrl && (
+              <button 
+                onClick={() => onOpenCaseStudy(project)}
+                className="px-5 py-2.5 bg-[#0B0C0E] hover:bg-black text-white text-[10px] font-sans font-bold uppercase tracking-widest rounded-full transition-all shadow-md active:scale-95 flex items-center gap-2 group/btn"
+              >
+                <span>Case Study</span>
+                <span className="text-sm transition-transform group-hover/btn:translate-x-1">→</span>
+              </button>
+            )}
+
+            {project.posterImage && (
+              <button
+                onClick={() => onOpenPosterModal({
+                  title: `${project.title} Poster`,
+                  subtitle: project.subtitle,
+                  image: project.posterImage,
+                  caseStudyUrl: project.caseStudyUrl
+                })}
+                className="px-5 py-2.5 bg-black/5 hover:bg-black/10 text-gray-900 text-[10px] font-sans font-bold uppercase tracking-widest rounded-full transition-all flex items-center gap-2 backdrop-blur-md active:scale-95"
+              >
+                <span>Poster</span>
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     </motion.div>
   );
@@ -282,19 +272,17 @@ const ProjectCard = ({ project, index, onOpenCaseStudy, onOpenPosterModal }) => 
 const PosterCard = ({ poster, index, onOpenPosterModal, onOpenCaseStudy }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.07 }}
-      className="group relative border border-vintage-gold/30 bg-white/60 backdrop-blur-sm hover:bg-white hover:border-vintage-gold transition-all duration-500 rounded-sm flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl"
+      transition={{ duration: 0.5, delay: index * 0.07, ease: "easeOut" }}
+      className="group relative bg-white border border-granger-border hover:border-granger-border transition-all duration-500 rounded-[32px] flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl p-2"
     >
-      <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-vintage-gold to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center z-20"></div>
-
       <div>
         {/* Poster Image Frame Container */}
         <div 
           onClick={() => onOpenPosterModal(poster)}
-          className="overflow-hidden border-b border-vintage-gold/20 relative group/img bg-vintage-charcoal/90 cursor-pointer aspect-[3/4] flex items-center justify-center p-2"
+          className="overflow-hidden rounded-[24px] relative group/img bg-granger-bg cursor-pointer aspect-[3/4] flex items-center justify-center p-2"
         >
           <img 
             src={poster.image} 
@@ -302,26 +290,26 @@ const PosterCard = ({ poster, index, onOpenPosterModal, onOpenCaseStudy }) => {
             className="w-full h-full object-contain opacity-95 group-hover/img:opacity-100 transform group-hover/img:scale-105 transition-all duration-500 drop-shadow-md" 
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-vintage-burgundy/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-sans text-xs uppercase tracking-widest font-semibold backdrop-blur-[2px]">
-            <span className="bg-vintage-burgundy/90 px-4 py-2 rounded border border-vintage-gold/40 shadow-lg flex items-center gap-2 text-vintage-cream">
-              <span>🔍</span> Click to View Full Poster
+          <div className="absolute inset-0 bg-granger-dark/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-sans text-xs uppercase tracking-widest font-bold backdrop-blur-[2px]">
+            <span className="bg-granger-dark px-6 py-3 rounded-full shadow-lg flex items-center gap-2">
+              <span>🔍</span> Click to View
             </span>
           </div>
         </div>
 
         {/* Card Info Body */}
-        <div className="p-5">
-          <h3 className="text-lg font-serif text-vintage-charcoal mb-1 leading-snug font-semibold">
+        <div className="p-6">
+          <h3 className="text-lg font-sans font-bold text-granger-dark mb-1 leading-snug tracking-tight">
             {poster.title}
           </h3>
-          <p className="font-sans text-xs tracking-wider uppercase text-vintage-gold font-semibold mb-3">
+          <p className="font-sans text-xs tracking-wider uppercase text-granger-primary font-bold mb-4">
             {poster.subtitle}
           </p>
 
           {poster.technologies && (
-            <div className="flex flex-wrap gap-1 items-center">
+            <div className="flex flex-wrap gap-2 items-center">
               {poster.technologies.split('•').map((tech, i) => (
-                <span key={i} className="px-2 py-0.5 text-[10px] font-mono bg-vintage-gold/10 text-vintage-burgundy border border-vintage-gold/20 rounded-sm">
+                <span key={i} className="px-3 py-1 text-[9px] font-sans font-bold bg-granger-bg text-granger-dark border border-granger-border rounded-full uppercase tracking-wider">
                   {tech.trim()}
                 </span>
               ))}
@@ -331,10 +319,10 @@ const PosterCard = ({ poster, index, onOpenPosterModal, onOpenCaseStudy }) => {
       </div>
 
       {/* Card Action Footer */}
-      <div className="px-5 pb-5 pt-3 flex items-center justify-between gap-2 mt-auto border-t border-vintage-gold/15">
+      <div className="px-6 pb-6 pt-3 flex items-center justify-between gap-2 mt-auto border-t border-granger-border">
         <button 
           onClick={() => onOpenPosterModal(poster)}
-          className="text-xs font-sans uppercase tracking-wider text-vintage-burgundy hover:text-vintage-gold font-semibold transition-colors flex items-center gap-1 cursor-pointer"
+          className="text-xs font-sans uppercase tracking-wider text-granger-text hover:text-granger-primary font-bold transition-colors flex items-center gap-1 cursor-pointer"
         >
           <span>🖼️ Full Size</span>
         </button>
@@ -342,7 +330,7 @@ const PosterCard = ({ poster, index, onOpenPosterModal, onOpenCaseStudy }) => {
         {poster.caseStudyUrl && (
           <button 
             onClick={() => onOpenCaseStudy(poster)}
-            className="text-xs font-sans uppercase tracking-wider text-vintage-gold hover:text-vintage-burgundy font-semibold transition-colors flex items-center gap-1 cursor-pointer ml-auto"
+            className="text-xs font-sans uppercase tracking-wider text-granger-primary hover:text-granger-dark font-bold transition-colors flex items-center gap-1 cursor-pointer ml-auto"
           >
             <span>Case Study →</span>
           </button>
@@ -368,21 +356,21 @@ const PosterLightboxModal = ({ poster, onClose, onOpenCaseStudy }) => {
   if (!poster) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/60 backdrop-blur-md">
       <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        initial={{ opacity: 0, scale: 0.95, y: 15 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        exit={{ opacity: 0, scale: 0.95, y: 15 }}
         transition={{ duration: 0.3 }}
-        className="relative w-full max-w-5xl h-[92vh] bg-vintage-paper rounded-sm border border-vintage-gold/50 shadow-2xl flex flex-col overflow-hidden"
+        className="relative w-full max-w-5xl h-[92vh] bg-granger-card rounded-[32px] shadow-2xl flex flex-col overflow-hidden"
       >
         {/* Modal Header */}
-        <div className="px-6 py-4 bg-vintage-burgundy text-white flex items-center justify-between border-b border-vintage-gold/30 shrink-0">
+        <div className="px-6 py-4 bg-white flex items-center justify-between border-b border-granger-border shrink-0">
           <div>
-            <h3 className="font-serif text-lg md:text-xl text-vintage-cream leading-tight font-semibold">
+            <h3 className="font-sans text-lg md:text-xl text-granger-dark leading-tight font-bold tracking-tight">
               {poster.title}
             </h3>
-            <p className="font-sans text-xs text-vintage-gold tracking-widest uppercase">
+            <p className="font-sans text-[10px] text-granger-primary tracking-widest uppercase font-bold">
               A2 Design Poster Preview
             </p>
           </div>
@@ -392,9 +380,9 @@ const PosterLightboxModal = ({ poster, onClose, onOpenCaseStudy }) => {
               href={poster.image}
               target="_blank"
               rel="noreferrer"
-              className="px-3 py-1.5 text-xs font-sans uppercase tracking-widest bg-vintage-gold/20 hover:bg-vintage-gold/30 text-vintage-cream border border-vintage-gold/40 rounded-sm transition-colors flex items-center gap-1"
+              className="px-4 py-2 text-[10px] font-sans uppercase tracking-widest bg-granger-bg hover:bg-granger-light/30 text-granger-dark font-bold rounded-full transition-colors flex items-center gap-1"
             >
-              <span>Original Image ↗</span>
+              <span>Original ↗</span>
             </a>
             {poster.caseStudyUrl && (
               <button
@@ -402,14 +390,14 @@ const PosterLightboxModal = ({ poster, onClose, onOpenCaseStudy }) => {
                   onClose();
                   onOpenCaseStudy(poster);
                 }}
-                className="px-3 py-1.5 text-xs font-sans uppercase tracking-widest bg-vintage-gold hover:bg-vintage-gold-light text-vintage-burgundy font-semibold rounded-sm transition-colors flex items-center gap-1"
+                className="px-4 py-2 text-[10px] font-sans uppercase tracking-widest bg-granger-primary hover:bg-granger-primary/90 text-white font-bold rounded-full transition-colors flex items-center gap-1"
               >
-                <span>View Case Study →</span>
+                <span>Case Study →</span>
               </button>
             )}
             <button
               onClick={onClose}
-              className="p-1.5 text-vintage-cream/80 hover:text-vintage-cream hover:bg-white/10 rounded-sm transition-colors cursor-pointer text-xl leading-none"
+              className="w-8 h-8 flex items-center justify-center bg-granger-bg hover:bg-granger-border text-granger-dark rounded-full transition-colors cursor-pointer text-sm font-bold"
               aria-label="Close modal"
             >
               ✕
@@ -418,11 +406,11 @@ const PosterLightboxModal = ({ poster, onClose, onOpenCaseStudy }) => {
         </div>
 
         {/* Modal Body - High Resolution Poster Display */}
-        <div className="flex-grow w-full h-full bg-vintage-charcoal/95 p-4 flex items-center justify-center overflow-auto relative">
+        <div className="flex-grow w-full h-full bg-granger-bg/50 p-4 flex items-center justify-center overflow-auto relative">
           <img 
             src={poster.image} 
             alt={poster.title} 
-            className="max-h-full max-w-full object-contain rounded border border-vintage-gold/30 shadow-2xl" 
+            className="max-h-full max-w-full object-contain rounded-xl shadow-lg" 
           />
         </div>
       </motion.div>
@@ -446,21 +434,21 @@ const CaseStudyModal = ({ project, onClose }) => {
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/75 backdrop-blur-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/60 backdrop-blur-md">
       <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        initial={{ opacity: 0, scale: 0.95, y: 15 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        exit={{ opacity: 0, scale: 0.95, y: 15 }}
         transition={{ duration: 0.3 }}
-        className="relative w-full max-w-6xl h-[92vh] bg-vintage-paper rounded-sm border border-vintage-gold/40 shadow-2xl flex flex-col overflow-hidden"
+        className="relative w-full max-w-6xl h-[92vh] bg-white rounded-[32px] shadow-2xl flex flex-col overflow-hidden"
       >
         {/* Modal Header */}
-        <div className="px-6 py-4 bg-vintage-burgundy text-white flex items-center justify-between border-b border-vintage-gold/30 shrink-0">
+        <div className="px-6 py-4 bg-white flex items-center justify-between border-b border-granger-border shrink-0">
           <div>
-            <h3 className="font-serif text-lg md:text-xl text-vintage-cream leading-tight">
+            <h3 className="font-sans text-lg md:text-xl text-granger-dark leading-tight font-bold tracking-tight">
               {project.title}
             </h3>
-            <p className="font-sans text-xs text-vintage-gold tracking-widest uppercase">
+            <p className="font-sans text-[10px] text-granger-primary tracking-widest uppercase font-bold">
               Interactive Case Study
             </p>
           </div>
@@ -470,13 +458,13 @@ const CaseStudyModal = ({ project, onClose }) => {
               href={project.caseStudyUrl}
               target="_blank"
               rel="noreferrer"
-              className="px-3 py-1.5 text-xs font-sans uppercase tracking-widest bg-vintage-gold/20 hover:bg-vintage-gold/30 text-vintage-cream border border-vintage-gold/40 rounded-sm transition-colors flex items-center gap-1"
+              className="px-4 py-2 text-[10px] font-sans uppercase tracking-widest bg-granger-bg hover:bg-granger-light/30 text-granger-dark font-bold rounded-full transition-colors flex items-center gap-1"
             >
               <span>Open in New Tab ↗</span>
             </a>
             <button
               onClick={onClose}
-              className="p-1.5 text-vintage-cream/80 hover:text-vintage-cream hover:bg-white/10 rounded-sm transition-colors cursor-pointer text-xl leading-none"
+              className="w-8 h-8 flex items-center justify-center bg-granger-bg hover:bg-granger-border text-granger-dark rounded-full transition-colors cursor-pointer text-sm font-bold"
               aria-label="Close modal"
             >
               ✕
@@ -505,25 +493,25 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16"
       >
         <div className="flex items-center gap-4">
-          <h2 className="text-3xl md:text-4xl text-vintage-burgundy font-serif">Selected Works</h2>
-          <div className="hidden sm:block w-16 h-[1px] bg-vintage-gold/40"></div>
+          <h2 className="text-2xl md:text-3xl text-granger-dark font-sans font-black uppercase tracking-widest">Selected Works</h2>
+          <div className="hidden sm:block w-16 h-[2px] bg-granger-light rounded-full"></div>
         </div>
 
         {/* Filter Navigation Tabs with Poster Button */}
-        <div className="flex items-center gap-2 bg-vintage-burgundy/5 p-1.5 border border-vintage-gold/30 rounded-sm self-start md:self-auto shadow-inner">
+        <div className="flex items-center gap-2 bg-white p-1 border border-granger-border rounded-full self-start md:self-auto shadow-sm">
           <button
             onClick={() => setActiveTab('projects')}
-            className={`px-5 py-2 text-xs font-sans uppercase tracking-widest transition-all duration-300 rounded-sm font-bold cursor-pointer ${
+            className={`px-5 py-2.5 text-xs font-sans uppercase tracking-widest transition-all duration-300 rounded-full font-bold cursor-pointer ${
               activeTab === 'projects'
-                ? 'bg-vintage-burgundy text-vintage-cream shadow-md'
-                : 'text-vintage-charcoal/70 hover:text-vintage-burgundy hover:bg-vintage-gold/15'
+                ? 'bg-granger-dark text-white shadow-md'
+                : 'text-granger-text hover:text-granger-dark hover:bg-granger-bg'
             }`}
           >
             Projects ({projects.length})
@@ -531,10 +519,10 @@ const Projects = () => {
           <button
             id="poster-button"
             onClick={() => setActiveTab('poster')}
-            className={`px-5 py-2 text-xs font-sans uppercase tracking-widest transition-all duration-300 rounded-sm font-bold cursor-pointer flex items-center gap-2 ${
+            className={`px-5 py-2.5 text-xs font-sans uppercase tracking-widest transition-all duration-300 rounded-full font-bold cursor-pointer flex items-center gap-2 ${
               activeTab === 'poster'
-                ? 'bg-vintage-burgundy text-vintage-cream shadow-md'
-                : 'text-vintage-charcoal/70 hover:text-vintage-burgundy hover:bg-vintage-gold/15'
+                ? 'bg-granger-dark text-white shadow-md'
+                : 'text-granger-text hover:text-granger-dark hover:bg-granger-bg'
             }`}
           >
             <span>🖼️</span>
@@ -545,16 +533,21 @@ const Projects = () => {
 
       {/* Render Projects View */}
       {activeTab === 'projects' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard 
-              key={project.title} 
-              project={project} 
-              index={index} 
-              onOpenCaseStudy={(proj) => setActiveCaseStudyProject(proj)}
-              onOpenPosterModal={(post) => setActivePosterModal(post)}
-            />
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
+          {projects.map((project, index) => {
+            // Asymmetric layout: 0th spans 3, 1st spans 2, 2nd spans 2, 3rd spans 3...
+            const isLarge = index % 4 === 0 || index % 4 === 3;
+            return (
+              <div key={project.title} className={`col-span-1 ${isLarge ? 'lg:col-span-3' : 'lg:col-span-2'}`}>
+                <ProjectCard 
+                  project={project} 
+                  index={index} 
+                  onOpenCaseStudy={(proj) => setActiveCaseStudyProject(proj)}
+                  onOpenPosterModal={(post) => setActivePosterModal(post)}
+                />
+              </div>
+            );
+          })}
         </div>
       )}
 

@@ -1,80 +1,87 @@
 import { motion } from 'framer-motion';
+import contactBg from '../../78d20b7b3e769e519578ed4c005c7206.jpg';
 
 const PhoneIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
 );
 
 const MailIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
 );
 
 const LinkedinIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
 );
 
 const MapPinIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
 );
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 px-6 relative">
-      <div className="max-w-5xl mx-auto text-center bg-[#0B1F33] rounded-2xl shadow-2xl border border-vintage-gold/30 py-16 px-6 md:p-24 text-vintage-ivory relative overflow-hidden">
-        {/* Decorative inner border */}
-        <div className="absolute inset-3 border border-vintage-gold/10 pointer-events-none rounded-xl"></div>
-        <div className="absolute inset-4 border border-vintage-gold/5 pointer-events-none rounded-lg"></div>
-
-        {/* Decorative Gold Coins in corners */}
-        <div className="absolute top-5 left-5 w-3.5 h-3.5 rounded-full bg-gradient-to-br from-[#ffe4a0] via-[#d4b572] to-[#8a6327] shadow-[inset_0_-1px_2px_rgba(0,0,0,0.5),0_2px_4px_rgba(0,0,0,0.4)] border border-[#ffe4a0]/30 pointer-events-none z-10"></div>
-        <div className="absolute top-5 right-5 w-3.5 h-3.5 rounded-full bg-gradient-to-bl from-[#ffe4a0] via-[#d4b572] to-[#8a6327] shadow-[inset_0_-1px_2px_rgba(0,0,0,0.5),0_2px_4px_rgba(0,0,0,0.4)] border border-[#ffe4a0]/30 pointer-events-none z-10"></div>
-        <div className="absolute bottom-5 left-5 w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-[#ffe4a0] via-[#d4b572] to-[#8a6327] shadow-[inset_0_-1px_2px_rgba(0,0,0,0.5),0_2px_4px_rgba(0,0,0,0.4)] border border-[#ffe4a0]/30 pointer-events-none z-10"></div>
-        <div className="absolute bottom-5 right-5 w-3.5 h-3.5 rounded-full bg-gradient-to-tl from-[#ffe4a0] via-[#d4b572] to-[#8a6327] shadow-[inset_0_-1px_2px_rgba(0,0,0,0.5),0_2px_4px_rgba(0,0,0,0.4)] border border-[#ffe4a0]/30 pointer-events-none z-10"></div>
+    <section id="contact" className="relative py-24 md:py-32 px-4 md:px-6 flex flex-col justify-center items-center overflow-hidden w-full mt-12 md:mt-24">
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={contactBg} 
+          alt="Contact Background" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      {/* Abstract Glowing Orbs for Visual Drama */}
+      <div className="absolute top-0 right-1/4 w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] bg-granger-primary/10 rounded-full blur-[80px] -translate-y-1/2 pointer-events-none mix-blend-screen" />
+      <div className="absolute bottom-0 left-1/4 w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] bg-white/10 rounded-full blur-[80px] translate-y-1/2 pointer-events-none mix-blend-screen" />
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative z-10"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative z-10 w-full max-w-4xl flex flex-col items-center text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-vintage-gold mb-4 tracking-wide">
-            Get In Touch
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/30 border border-white/20 mb-8 backdrop-blur-md shadow-lg">
+            <span className="w-1.5 h-1.5 rounded-full bg-granger-primary animate-pulse shadow-[0_0_8px_rgba(255,85,0,0.8)]"></span>
+            <span className="font-sans text-white uppercase tracking-widest text-[10px] font-bold">Open to Opportunities</span>
+          </div>
+
+          <h2 className="text-5xl sm:text-6xl md:text-8xl font-sans font-extrabold text-white mb-6 tracking-[-0.04em] leading-[0.9] drop-shadow-2xl">
+            Let's build<br />something together.
           </h2>
-          <p className="font-montserrat text-sm md:text-base text-vintage-gold/70 mb-16 tracking-widest uppercase">
-            Let's Discuss Your Next Venture
+          
+          <p className="font-sans text-lg md:text-xl text-gray-100 mb-16 tracking-tight font-semibold max-w-2xl drop-shadow-md">
+            Whether you have a question, a project in mind, or just want to say hi, I'll try my best to get back to you!
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 font-serif text-lg">
-            <a href="tel:+919677207948" className="flex flex-col items-center gap-4 hover:text-vintage-gold transition-all duration-300 group hover:-translate-y-2">
-              <div className="p-5 rounded-full border border-vintage-gold/30 text-vintage-gold group-hover:bg-vintage-gold group-hover:text-vintage-burgundy transition-all shadow-[0_0_15px_rgba(197,160,89,0.1)]">
-                <PhoneIcon />
-              </div>
-              <span className="tracking-wider font-montserrat text-sm">+91 9677207948</span>
+          <div className="flex flex-wrap gap-3 md:gap-4 justify-center items-center font-sans text-sm font-bold text-white mb-16">
+            <a href="tel:+919677207948" className="flex items-center gap-3 px-6 py-3.5 bg-black/40 hover:bg-black/60 border border-white/20 rounded-full transition-all whitespace-nowrap backdrop-blur-md shadow-xl hover:border-white/40 group">
+              <span className="text-granger-primary group-hover:scale-110 transition-transform"><PhoneIcon /></span>
+              +91 9677207948
             </a>
-
-            <a href="mailto:Sriram1326.io@gmail.com" className="flex flex-col items-center gap-4 hover:text-vintage-gold transition-all duration-300 group hover:-translate-y-2">
-              <div className="p-5 rounded-full border border-vintage-gold/30 text-vintage-gold group-hover:bg-vintage-gold group-hover:text-vintage-burgundy transition-all shadow-[0_0_15px_rgba(197,160,89,0.1)]">
-                <MailIcon />
-              </div>
-              <span className="tracking-wider font-montserrat text-sm">Sriram1326.io@gmail.com</span>
+            
+            <a href="mailto:Sriram1326.io@gmail.com" className="flex items-center gap-3 px-6 py-3.5 bg-black/40 hover:bg-black/60 border border-white/20 rounded-full transition-all whitespace-nowrap backdrop-blur-md shadow-xl hover:border-white/40 group">
+              <span className="text-granger-primary group-hover:scale-110 transition-transform"><MailIcon /></span>
+              Sriram1326.io@gmail.com
             </a>
-
-            <a href="https://www.linkedin.com/in/sriramio" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-4 hover:text-vintage-gold transition-all duration-300 group hover:-translate-y-2">
-              <div className="p-5 rounded-full border border-vintage-gold/30 text-vintage-gold group-hover:bg-vintage-gold group-hover:text-vintage-burgundy transition-all shadow-[0_0_15px_rgba(197,160,89,0.1)]">
-                <LinkedinIcon />
-              </div>
-              <span className="tracking-wider font-montserrat text-sm">linkedin.com/in/sriramio</span>
+            
+            <a href="https://www.linkedin.com/in/sriramio" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-3.5 bg-black/40 hover:bg-black/60 border border-white/20 rounded-full transition-all whitespace-nowrap backdrop-blur-md shadow-xl hover:border-white/40 group">
+              <span className="text-granger-primary group-hover:scale-110 transition-transform"><LinkedinIcon /></span>
+              linkedin.com/in/sriramio
             </a>
-
-            <div className="flex flex-col items-center gap-4 text-vintage-ivory/80 group">
-              <div className="p-5 rounded-full border border-vintage-gold/20 text-vintage-gold/50">
-                <MapPinIcon />
-              </div>
-              <span className="tracking-wider font-montserrat text-sm">Chennai, India</span>
+            
+            <div className="flex items-center gap-3 px-6 py-3.5 bg-black/40 border border-white/20 rounded-full whitespace-nowrap cursor-default backdrop-blur-md shadow-xl">
+              <MapPinIcon />
+              Chennai, India
             </div>
           </div>
+
+          <a
+            href="mailto:Sriram1326.io@gmail.com"
+            className="group relative px-10 py-5 bg-granger-primary hover:bg-granger-primary/90 text-white text-base font-sans font-bold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 flex items-center justify-center gap-4 shadow-xl shadow-granger-primary/20"
+          >
+            <span className="relative z-10 tracking-widest uppercase">Start a Conversation</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="relative z-10 transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
         </motion.div>
-      </div>
     </section>
   );
 };

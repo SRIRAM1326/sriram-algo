@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="relative overflow-hidden selection:bg-vintage-gold/30 selection:text-vintage-charcoal">
+    <div className="relative overflow-hidden selection:bg-granger-primary/30 selection:text-granger-dark">
       <Header />
       <main>
         <Hero />

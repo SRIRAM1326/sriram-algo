@@ -1,29 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-vintage-ivory: #F9F6F0;
-  --color-vintage-cream: #F4F1EA;
-  --color-vintage-charcoal: #1C2331;
-  --color-vintage-blue: #0f172a;
-  --color-vintage-gold: #C5A059;
-  --color-vintage-gold-light: #d4b572;
-  --color-vintage-burgundy: #4A151C;
+  --color-granger-bg: #F4F4F6;
+  --color-granger-card: #FFFFFF;
+  --color-granger-dark: #0B0C0E;
+  --color-granger-surface-dark: #0E1012;
+  --color-granger-primary: #FF5500;
+  --color-granger-light: #9CA3AF;
+  --color-granger-text: #6B7280;
+  --color-granger-border: rgba(0, 0, 0, 0.07);
+  --color-granger-border-dark: rgba(255, 255, 255, 0.12);
 
-  --font-serif: "Playfair Display", "Cormorant Garamond", serif;
-  --font-sans: "Inter", "Lora", sans-serif;
-  --font-montserrat: "Montserrat", sans-serif;
-  --font-script: "Pinyon Script", "Great Vibes", "Alex Brush", cursive;
+  --font-sans: "Inter", sans-serif;
 }
 
 @layer base {
-  body {
-    @apply bg-vintage-ivory text-vintage-charcoal font-sans antialiased;
-    cursor: url('./assets/crown-cursor.svg') 16 16, auto;
+  html {
+    scroll-behavior: smooth;
   }
 
-  * {
-    cursor: url('./assets/crown-cursor.svg') 16 16, auto !important;
+  body {
+    @apply bg-granger-bg text-granger-dark font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-granger-primary/30 text-granger-dark;
   }
 
   h1,
@@ -32,16 +34,35 @@
   h4,
   h5,
   h6 {
-    @apply font-serif text-vintage-charcoal font-medium tracking-tight;
-  }
-
-  ::selection {
-    @apply bg-vintage-gold/30 text-vintage-charcoal;
+    @apply font-sans text-granger-dark font-bold tracking-tight;
   }
 }
 
 @layer utilities {
-  .text-shadow-elegant {
-    text-shadow: 0px 2px 4px rgba(28, 35, 49, 0.1);
+  .text-balance {
+    text-wrap: balance;
   }
+  .glass-card {
+    @apply bg-white/75 backdrop-blur-md border border-granger-border shadow-sm;
+  }
+  .granger-card {
+    @apply bg-white border border-granger-border shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] rounded-[24px];
+  }
+  .text-shadow-elegant {
+    text-shadow: none;
+  }
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-granger-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-granger-light rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-granger-text;
 }
