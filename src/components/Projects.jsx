@@ -190,7 +190,7 @@ const ProjectCard = ({ project, index, onOpenCaseStudy, onOpenPosterModal }) => 
       className="group relative h-full rounded-[40px]"
     >
       {/* iOS Glassmorphic Card Container */}
-      <div className="bg-white/70 backdrop-blur-3xl rounded-[40px] shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-white/80 flex flex-col overflow-hidden h-full relative group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 group-hover:-translate-y-1">
+      <div className="bg-white/30 backdrop-blur-2xl rounded-[40px] shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] border border-white/60 flex flex-col overflow-hidden h-full relative group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 group-hover:-translate-y-1">
         
         {/* Inner Highlight for depth */}
         <div className="absolute inset-0 rounded-[40px] pointer-events-none shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] z-30"></div>
@@ -221,7 +221,7 @@ const ProjectCard = ({ project, index, onOpenCaseStudy, onOpenPosterModal }) => 
         </div>
 
         {/* Card Content Body */}
-        <div className="px-6 md:px-8 pb-8 flex flex-col flex-grow z-20 relative bg-gradient-to-b from-white/80 to-white/30 pt-4 -mt-2">
+        <div className="px-6 md:px-8 pb-8 flex flex-col flex-grow z-20 relative bg-white/20 pt-6 -mt-2 backdrop-blur-md">
           <div className="mb-3">
             <p className="font-sans text-[10px] tracking-widest uppercase text-granger-primary font-bold mb-2">
               {project.subtitle}
@@ -491,13 +491,19 @@ const Projects = () => {
   const [activePosterModal, setActivePosterModal] = useState(null);
 
   return (
-    <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="projects" className="py-24 px-6 max-w-6xl mx-auto relative">
+      
+      {/* Abstract Liquid iPhone Background Orbs */}
+      <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-purple-400/20 rounded-full blur-[120px] pointer-events-none mix-blend-multiply"></div>
+      <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-blue-400/20 rounded-full blur-[120px] pointer-events-none mix-blend-multiply"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-rose-400/15 rounded-full blur-[140px] pointer-events-none mix-blend-multiply"></div>
+
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16"
+        className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16 relative z-10"
       >
         <div className="flex items-center gap-4">
           <h2 className="text-2xl md:text-3xl text-granger-dark font-sans font-black uppercase tracking-widest">Selected Works</h2>

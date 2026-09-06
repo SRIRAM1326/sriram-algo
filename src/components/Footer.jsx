@@ -10,9 +10,6 @@ const Footer = () => {
       <p className="font-sans text-xs md:text-sm text-granger-text uppercase tracking-widest font-bold">
         © {currentYear} S R I R A M &nbsp; M. All Rights Reserved.
       </p>
-      <p className="font-sans font-medium text-xs text-granger-text/80 mt-3 tracking-wider">
-        Designed with a modern editorial aesthetic.
-      </p>
     </footer>
   );
 };
