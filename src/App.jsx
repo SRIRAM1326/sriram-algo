@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
+import TechMarquee from './components/TechMarquee';
 import Projects from './components/Projects';
 import EducationSkills from './components/EducationSkills';
 import Contact from './components/Contact';
@@ -15,6 +16,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <TechMarquee />
         <Experience />
         <Projects />
         <EducationSkills />

@@ -1,13 +1,69 @@
 import { motion } from 'framer-motion';
 
 const certifications = [
-  "SQL Basics — HackerRank, 2024",
-  "Advanced Excel — Internshala, 2024",
-  "Microsoft Copilot — Microsoft / LinkedIn, 2024",
-  "Introduction to Data Analysis with Excel — Coursera, 2024",
-  "Data Analytics & Visualization — Accenture, 2024",
-  "Data Visualization — Tata Group, 2025",
-  "Data Analytics — Deloitte Australia, 2025"
+  {
+    prefix: "HackerRank",
+    name: "SQL Basics",
+    year: "2024",
+    bg: "bg-[#111111]",
+    text: "text-white",
+    accent: "text-gray-400",
+    decorator: "bg-gradient-to-l from-gray-800 to-transparent"
+  },
+  {
+    prefix: "Internshala",
+    name: "Advanced Excel",
+    year: "2024",
+    bg: "bg-gradient-to-r from-[#D0E4FF] to-[#E5F0FF]",
+    text: "text-black",
+    accent: "text-blue-500",
+    decorator: "bg-gradient-to-bl from-blue-300/30 to-transparent"
+  },
+  {
+    prefix: "Microsoft",
+    name: "Copilot",
+    year: "2024",
+    bg: "bg-gradient-to-r from-[#0E152E] to-[#1A2652]",
+    text: "text-white",
+    accent: "text-blue-300",
+    decorator: "bg-gradient-to-t from-blue-600/20 to-transparent"
+  },
+  {
+    prefix: "Coursera",
+    name: "Data Analysis",
+    year: "2024",
+    bg: "bg-gradient-to-r from-[#F8FAFC] to-white border border-slate-200",
+    text: "text-slate-900",
+    accent: "text-slate-400",
+    decorator: "bg-gradient-to-tr from-sky-200/40 to-transparent"
+  },
+  {
+    prefix: "Accenture",
+    name: "Data Analytics",
+    year: "2024",
+    bg: "bg-gradient-to-r from-[#4A00E0] to-[#8E2DE2]",
+    text: "text-white",
+    accent: "text-purple-200",
+    decorator: "bg-white/10"
+  },
+  {
+    prefix: "Tata",
+    name: "Data Viz",
+    year: "2025",
+    bg: "bg-gradient-to-r from-[#FFE5E5] to-[#E5F3FF]",
+    text: "text-slate-900",
+    accent: "text-slate-500",
+    decorator: "bg-gradient-to-bl from-pink-300/20 to-transparent"
+  },
+  {
+    prefix: "Deloitte",
+    name: "Data Analytics",
+    year: "2025",
+    bg: "bg-gradient-to-r from-[#003B2F] to-[#005745]",
+    text: "text-white",
+    accent: "text-emerald-300",
+    decorator: "bg-gradient-to-tl from-emerald-400/20 to-transparent"
+  }
 ];
 
 const educationList = [
@@ -90,14 +146,23 @@ const EducationSkills = () => {
             <span>Certifications</span>
           </h3>
 
-          <ul className="space-y-4 font-sans text-sm text-granger-text font-medium list-none">
+          <div className="space-y-2">
             {certifications.map((cert, i) => (
-              <li key={i} className="flex gap-3 items-start p-4 bg-white border border-granger-border rounded-[16px] shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
-                <span className="text-granger-primary mt-[2px]">✦</span>
-                <span className="leading-relaxed">{cert}</span>
-              </li>
+              <div
+                key={i}
+                className={`relative overflow-hidden flex items-center p-2.5 sm:p-3.5 rounded-[14px] sm:rounded-[16px] ${cert.bg} shadow-sm group hover:scale-[1.02] transition-transform duration-300`}
+              >
+                {/* Abstract decorator to simulate the Apple banner images */}
+                <div className={`absolute right-0 top-0 bottom-0 w-1/2 ${cert.decorator} opacity-50 rounded-r-[14px] sm:rounded-r-[16px] pointer-events-none`}></div>
+
+                <div className="relative z-10 flex items-center gap-2 px-1">
+                  <h3 className={`text-xs sm:text-sm font-sans font-black tracking-tight ${cert.text}`}>
+                    {cert.prefix} <span className="font-medium opacity-90">{cert.name}</span>
+                  </h3>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </motion.div>
 
         {/* Skills Column */}
@@ -120,7 +185,7 @@ const EducationSkills = () => {
                   <span className="text-2xl">{group.icon}</span>
                   <h4 className="font-sans font-extrabold text-xl text-granger-dark tracking-tight">{group.title}</h4>
                 </div>
-                
+
                 <div className="space-y-6">
                   {group.subgroups.map((sub, idx) => (
                     <div key={idx} className="relative">

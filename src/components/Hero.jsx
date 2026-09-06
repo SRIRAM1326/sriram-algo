@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import AnalogClock from './AnalogClock';
 import heroBg from '../../download (6).jpg';
 
 const PhoneIcon = () => (
@@ -56,23 +55,34 @@ const Hero = () => {
           Where Quantitative Engineering Meets Modern Artificial Intelligence
         </h2>
 
-        <div className="flex flex-wrap gap-2 md:gap-3 justify-center items-center font-sans text-xs font-bold text-white mb-12 max-w-3xl">
-          <a href="tel:+919677207948" className="group flex items-center gap-2 px-4 py-2.5 bg-black/30 hover:bg-black/50 border border-white/20 rounded-full transition-all whitespace-nowrap backdrop-blur-md shadow-lg hover:border-white/40">
-            <span className="transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:rotate-6"><PhoneIcon /></span>
-            +91 9677207948
-          </a>
-          <a href="mailto:Sriram1326.io@gmail.com" className="group flex items-center gap-2 px-4 py-2.5 bg-black/30 hover:bg-black/50 border border-white/20 rounded-full transition-all whitespace-nowrap backdrop-blur-md shadow-lg hover:border-white/40">
-            <span className="transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:rotate-6"><MailIcon /></span>
-            Sriram1326.io@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/sriramio" target="_blank" rel="noreferrer" className="group flex items-center gap-2 px-4 py-2.5 bg-black/30 hover:bg-black/50 border border-white/20 rounded-full transition-all whitespace-nowrap backdrop-blur-md shadow-lg hover:border-white/40">
-            <span className="transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:-rotate-6"><LinkedinIcon /></span>
-            linkedin.com/in/sriramio
-          </a>
-          <div className="group flex items-center gap-2 px-4 py-2.5 bg-black/30 border border-white/20 rounded-full whitespace-nowrap cursor-default backdrop-blur-md shadow-lg transition-all hover:bg-black/50 hover:border-white/40">
-            <span className="transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1"><MapPinIcon /></span>
-            Chennai, India
+        <div className="flex flex-col sm:flex-row items-center bg-white/10 backdrop-blur-xl p-2 sm:p-2.5 rounded-3xl sm:rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] mb-12 max-w-4xl font-sans text-sm font-medium text-white gap-2 sm:gap-0 border border-white/20 transition-transform hover:scale-[1.02] duration-300">
+          
+          <div className="flex items-center gap-2 px-4 py-2 hover:text-white/80 transition-colors">
+            <span>Chennai, India</span>
+            <MapPinIcon />
           </div>
+
+          <div className="hidden sm:block w-px h-6 bg-white/20 mx-2"></div>
+
+          <a href="tel:+919677207948" className="flex items-center gap-2 px-4 py-2 hover:text-white/80 transition-colors">
+            <PhoneIcon />
+            <span>+91 9677207948</span>
+          </a>
+
+          <div className="hidden sm:block w-px h-6 bg-white/20 mx-2"></div>
+
+          <a href="https://linkedin.com/in/sriramio" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:text-white/80 transition-colors">
+            <LinkedinIcon />
+            <span>in/sriramio</span>
+          </a>
+
+          <div className="hidden sm:block w-px h-6 bg-white/20 mx-2"></div>
+
+          <a href="mailto:Sriram1326.io@gmail.com" className="group flex items-center gap-2 px-6 py-2.5 bg-white hover:bg-gray-100 text-black rounded-full transition-all ml-0 sm:ml-2 shadow-lg">
+            <span className="font-bold">Get in Touch</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+          
         </div>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
@@ -93,9 +103,6 @@ const Hero = () => {
           </a>
         </div>
 
-        <div className="mt-4 opacity-70 hover:opacity-100 transition-opacity">
-          <AnalogClock />
-        </div>
       </motion.div>
 
       <motion.div
